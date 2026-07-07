@@ -31,42 +31,21 @@
 // conformances on the stdlib types (per SE-0409 import visibility).
 // Bare `import` or `internal import` in an SLI file would publish the
 // extension declarations without exposing the Carrier brand they
-// extend — a real surface defect, not a stylistic preference. The
-// rule was previously a no-op observer firing 70 times on every
-// `import Carrier...` statement; refined to fire only on actual
-// convention violations. Demonstration value is the rule's
-// existence-in-Lint.swift (anyone reading sees the inline custom-rule
-// machinery) rather than its firing count.
+// extend — a real surface defect, not a stylistic preference.
 //
-// Brand-newtype-owner exclusion (per [API-BRAND-001] in code-surface
-// skill). swift-carrier-primitives owns the `Carrier.\`Protocol\``
-// brand. Unlike value-form brand-owners (cardinal, ordinal, cyclic),
-// carrier's brand is a *protocol* — `__unchecked:` constructors,
-// `.rawValue` accessors, pointer arithmetic, and bitpattern
-// integration overloads (the value-form brand boundary vocabulary) do
-// not appear at carrier's canonical brand surface. Only one rule
-// fires at legitimate-by-construction same-package brand-boundary
-// sites:
-//
-//   - `int public parameter` — `Fixture.Plain`, `Fixture.Scoped.Resource`,
-//     and `Fixture.Unique.Resource` are the in-package `Carrier.\`Protocol\``
-//     conformers with `Underlying == Int`; their public initializers take
-//     `Int` directly because `Int` IS the Underlying being wrapped. The
-//     rule targets external consumers exposing bare `Int` at the stdlib
-//     boundary — not the brand-owner's own protocol-witness shape.
-//
-// Excluding the rule locally preserves cross-package strict-superset
-// firing for external consumers. See
-// `swift-foundations/swift-linter-rules/Research/numerics-rule-recognizer-2026-05-12.md`
-// (Option 7: rule decomposition via bundle composition) for the
-// architectural rationale. Typed-id form mirrors the cyclic precedent
-// (swift-cyclic-primitives/Lint.swift). Per Swift 6.3+
-// MemberImportVisibility (SE-0444), the defining rule-pack module is
-// directly imported below.
+// Brand-newtype-owner recognizer (per [API-BRAND-001] in code-surface
+// skill). swift-carrier-primitives owns the `Carrier.\`Protocol\`` brand
+// under the `Carrier` namespace root. The `int public parameter` rule —
+// which fires on the in-package `Carrier.\`Protocol\`` conformers whose
+// `Underlying == Int` (their public initializers take `Int` directly
+// because `Int` IS the Underlying being wrapped) — self-suppresses on
+// the owner's own surface via the engine's §A brand pre-pass
+// (`Lint.Brand.owned`), so no per-package `.excluding(rules:)` stopgap is
+// needed; cross-package strict-superset firing on external consumers is
+// preserved.
 
 import Linter
 import Linter_Primitives_Rules
-import Institute_Linter_Rule_Naming
 import SwiftSyntax
 
 extension Lint.Rule {
@@ -138,23 +117,11 @@ Lint.run(dependencies: [
         products: ["Linter Primitives Rules"]
     ),
     .package(
-        url: "https://github.com/swift-foundations/swift-institute-linter-rules.git",
-        branch: "main",
-        products: ["Institute Linter Rule Naming"]
-    ),
-    .package(
         url: "https://github.com/swiftlang/swift-syntax.git",
         "602.0.0"..<"603.0.0",
         products: ["SwiftSyntax"]
     ),
 ]) {
-    Lint.Rule.Bundle.primitives.excluding(rules: [
-        // reason: `Fixture.Plain`, `Fixture.Scoped.Resource`, and
-        // `Fixture.Unique.Resource` are the in-package
-        // `Carrier.`Protocol`` conformers with `Underlying == Int`;
-        // their public initializers take `Int` directly because `Int`
-        // IS the Underlying being wrapped at the brand boundary.
-        Lint.Rule.`int public parameter`.id,
-    ])
+    Lint.Rule.Bundle.primitives
     Lint.Rule.Configuration.enable(.`sli public carrier import`)
 }
