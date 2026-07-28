@@ -1,7 +1,12 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// swiftlint:disable:next l1_no_platform_conditionals - reason: mirrors the guard on the conformance under test (Sources/.../Float16+Carrier.swift); Float16 is unavailable on macOS x86_64, so these tests cannot compile there.
+// Mirrors the guard on the conformance under test
+// (Sources/.../Float16+Carrier.swift): Float16 is unavailable on macOS x86_64,
+// so these tests cannot compile there. No lint suppression is needed here —
+// `l1_no_platform_conditionals` is scoped `included: ['Sources/.*\.swift']` in
+// the shared parent config, so it never fires under `Tests/`, and suppressing
+// it here is itself a `superfluous_disable_command` violation.
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
 
     @Suite
