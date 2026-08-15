@@ -73,7 +73,8 @@ extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Edge Case`
     func `Q2 validation-fail throws closure's typed error`() {
         #expect(throws: Validation.rejected) {
             let resource = Fixture.Unique.Resource(raw: 0)
-            _ = try Fixture.Unique(resource) { (v: borrowing Fixture.Unique.Resource) throws(Validation) in
+            _ = try Fixture.Unique(resource) {
+                (v: borrowing Fixture.Unique.Resource) throws(Validation) in
                 if v.raw == 0 { throw .rejected }
             }
         }
@@ -83,7 +84,8 @@ extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Edge Case`
     func `Q4 validation-fail throws closure's typed error`() {
         #expect(throws: Validation.rejected) {
             let resource = Fixture.Scoped.Resource(raw: 0)
-            _ = try Fixture.Scoped(resource) { (v: borrowing Fixture.Scoped.Resource) throws(Validation) in
+            _ = try Fixture.Scoped(resource) {
+                (v: borrowing Fixture.Scoped.Resource) throws(Validation) in
                 if v.raw == 0 { throw .rejected }
             }
         }
