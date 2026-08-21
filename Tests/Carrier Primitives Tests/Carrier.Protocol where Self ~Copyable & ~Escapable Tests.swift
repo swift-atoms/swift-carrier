@@ -1,24 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// Tests focused on the `Carrier where Self ~Copyable & ~Escapable`
-// default extension shipped in `Sources/Carrier Primitives/Carrier where Self ~Copyable & ~Escapable.swift`.
-//
-// V5 design property: the throwing init takes a closure that validates
-// the underlying value before construction. When validation passes, the
-// init delegates to the existing non-throwing `init(_ underlying:)`
-// requirement. When validation fails, the closure's error type is
-// propagated through typed throws — `E == Never` for the no-validation
-// case is REFUTED (see Experiments/generic-throws-init H2).
-//
-// Coverage shape:
-//   • Unit — validation-pass path on Plain, Unique, Scoped fixtures
-//     (one per quadrant covered by the suppressed-protocol constraint).
-//   • Edge Case — typed throws preserves the closure's E across
-//     fixtures.
-//   • Integration — none here; cross-fixture dispatch is handled in
-//     `Carrier Tests.swift`.
-
 @Suite
 struct `Carrier.Protocol where Self ~Copyable & ~Escapable Tests` {
     @Suite struct Unit {}
@@ -45,7 +27,7 @@ extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.Unit {
     func `Q2 validation-pass constructs Unique via default throwing init`() throws(Validation) {
         let resource = Fixture.Unique.Resource(raw: 7)
         let u = try Fixture.Unique(resource) { _ in
-            // Validation closure takes a borrow; cannot copy ~Copyable here.
+
         }
         #expect(u.underlying.raw == 7)
     }

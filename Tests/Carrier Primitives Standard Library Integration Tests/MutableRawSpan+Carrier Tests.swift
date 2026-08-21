@@ -1,9 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// MutableRawSpan is ~Escapable. Conformance is a one-line typealias
-// backed by `extension Carrier where Underlying == Self, Self: ~Escapable`.
-
 @Suite
 struct `MutableRawSpan+Carrier Tests` {
     @Suite struct Unit {}

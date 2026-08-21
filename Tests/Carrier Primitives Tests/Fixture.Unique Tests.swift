@@ -1,11 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// Q2 (~Copyable & Escapable Underlying) fixture — the carrier is
-// ~Copyable because its Underlying is. Underlying remains Escapable,
-// so `@_lifetime` annotations are still omitted. The getter uses a
-// `_read { yield }` coroutine for borrowing access.
-
 @Suite
 struct `Fixture.Unique Tests` {
     @Suite struct Unit {}
@@ -44,7 +39,7 @@ extension `Fixture.Unique Tests`.Integration {
     @Test
     func `Unique satisfies generic Carrier reflection`() {
         let c = Fixture.Unique(Fixture.Unique.Resource(raw: 1))
-        // `_read` yield path drives the generic describe call.
+
         let desc = Fixture.describe(c)
         #expect(desc == "Carrier<Resource> with Domain Never")
     }

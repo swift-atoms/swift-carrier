@@ -1,10 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// MutableSpan<Element> is ~Escapable. Conformance is a one-line
-// typealias backed by `extension Carrier where Underlying == Self,
-// Self: ~Escapable`.
-
 @Suite
 struct `MutableSpan+Carrier Tests` {
     @Suite struct Unit {}

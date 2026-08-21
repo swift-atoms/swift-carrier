@@ -40,7 +40,7 @@ extension `Unicode.Scalar+Carrier Tests`.`Edge Case` {
 
     @Test
     func `Unicode_Scalar handles supplementary plane (emoji)`() {
-        let v: Unicode.Scalar = Unicode.Scalar(0x1F30D)!  // 🌍
+        let v: Unicode.Scalar = Unicode.Scalar(0x1F30D)!
         #expect(v.underlying.value == 0x1F30D)
     }
 

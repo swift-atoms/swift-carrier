@@ -9,9 +9,6 @@ struct `ObjectIdentifier+Carrier Tests` {
     @Suite(.serialized) struct Performance {}
 }
 
-// ObjectIdentifier needs a class instance to construct. We use a
-// minimal local class for the test fixtures.
-
 private final class Token {}
 
 extension `ObjectIdentifier+Carrier Tests`.Unit {

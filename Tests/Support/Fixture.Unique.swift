@@ -1,12 +1,7 @@
 public import Carrier_Primitives
 
 extension Fixture {
-    /// Quadrant 2: ~Copyable & Escapable Underlying.
-    ///
-    /// The carrier is `~Copyable` because its Underlying is. Underlying
-    /// remains Escapable, so `@_lifetime` annotations are still
-    /// omitted. The getter uses a `_read { yield }` coroutine to
-    /// provide borrowing access to the `~Copyable` stored value.
+
     public struct Unique: ~Copyable {
         var _storage: Fixture.Unique.Resource
 

@@ -1,11 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// Q1 (Copyable & Escapable Underlying) fixture — exercises the
-// simplest carrier shape: plain storage, plain getter, plain init.
-// `@_lifetime` annotations are omitted because Int is Escapable.
-// `Domain` defaults to `Never`.
-
 @Suite
 struct `Fixture.Plain Tests` {
     @Suite struct Unit {}

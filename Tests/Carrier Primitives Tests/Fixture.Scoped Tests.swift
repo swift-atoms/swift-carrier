@@ -1,12 +1,6 @@
 import Carrier_Primitives_Test_Support
 import Testing
 
-// Q4 (~Copyable & ~Escapable Underlying) fixture — both suppressions
-// apply. `@_lifetime` annotations on the getter and init are required
-// (unlike Q1/Q2, where Escapable Underlying rejects them). `_read`
-// yields the ~Copyable stored value by borrow with its lifetime
-// scoped to self.
-
 @Suite
 struct `Fixture.Scoped Tests` {
     @Suite struct Unit {}

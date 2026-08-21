@@ -9,10 +9,6 @@ struct `StaticString+Carrier Tests` {
     @Suite(.serialized) struct Performance {}
 }
 
-// StaticString does not conform to Equatable. Comparison goes through
-// `description` (which produces a String), or through the underlying
-// UTF-8 bytes via `withUTF8Buffer`.
-
 extension `StaticString+Carrier Tests`.Unit {
 
     @Test
