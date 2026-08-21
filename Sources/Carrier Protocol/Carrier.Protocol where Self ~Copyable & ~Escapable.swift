@@ -3,7 +3,11 @@
 
 public import Carrier_Primitive
 
-extension Carrier.`Protocol` where Self: ~Copyable & ~Escapable {
+extension Carrier.`Protocol`
+where
+    Self: ~Copyable & ~Escapable,
+    Underlying: ~Copyable & ~Escapable
+{
     /// Constructs a carrier from an underlying value, validating it first through the supplied closure.
     ///
     /// Throws the closure's error type when validation fails; otherwise
