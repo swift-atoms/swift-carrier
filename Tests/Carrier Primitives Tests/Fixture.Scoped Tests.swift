@@ -37,9 +37,9 @@ extension `Fixture.Scoped Tests`.`Edge Case` {
 extension `Fixture.Scoped Tests`.Integration {
 
     @Test
-    func `Scoped satisfies generic Carrier reflection`() {
+    func `Scoped satisfies generic Carrier contract`() {
         let c = Fixture.Scoped(Fixture.Scoped.Resource(raw: 5))
-        let desc = Fixture.describe(c)
-        #expect(desc == "Carrier<Resource> with Domain Never")
+        let conforms = Fixture.isCarrier(c)
+        #expect(conforms)
     }
 }

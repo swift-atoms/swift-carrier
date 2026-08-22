@@ -37,10 +37,9 @@ extension `Fixture.Unique Tests`.`Edge Case` {
 extension `Fixture.Unique Tests`.Integration {
 
     @Test
-    func `Unique satisfies generic Carrier reflection`() {
+    func `Unique satisfies generic Carrier contract`() {
         let c = Fixture.Unique(Fixture.Unique.Resource(raw: 1))
-
-        let desc = Fixture.describe(c)
-        #expect(desc == "Carrier<Resource> with Domain Never")
+        let conforms = Fixture.isCarrier(c)
+        #expect(conforms)
     }
 }

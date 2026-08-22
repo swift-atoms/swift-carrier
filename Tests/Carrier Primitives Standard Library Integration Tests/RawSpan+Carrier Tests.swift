@@ -26,9 +26,8 @@ extension `RawSpan+Carrier Tests`.`Edge Case` {
 
     @Test
     func `RawSpan conforms at the type level`() {
-        func _requireCarrier<T: Carrier.`Protocol` & ~Copyable & ~Escapable>(_: T.Type) {}
-        _requireCarrier(RawSpan.self)
-        #expect(Bool(true))
+        let conforms = Fixture.isCarrier(RawSpan.self)
+        #expect(conforms)
     }
 
     @Test

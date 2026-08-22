@@ -13,10 +13,8 @@ extension `Never+Carrier Tests`.`Edge Case` {
 
     @Test
     func `Never conforms to Carrier at the type level`() {
-
-        func _requireCarrier<T: Carrier.`Protocol` & ~Copyable & ~Escapable>(_: T.Type) {}
-        _requireCarrier(Never.self)
-        #expect(Bool(true))
+        let conforms = Fixture.isCarrier(Never.self)
+        #expect(conforms)
     }
 
     @Test

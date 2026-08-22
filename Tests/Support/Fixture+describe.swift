@@ -2,6 +2,20 @@ public import Carrier_Primitives
 
 extension Fixture {
 
+    public static func isCarrier<C: Carrier.`Protocol` & ~Copyable & ~Escapable>(
+        _: borrowing C
+    ) -> Bool
+    where C.Domain: ~Copyable & ~Escapable, C.Underlying: ~Copyable & ~Escapable {
+        true
+    }
+
+    public static func isCarrier<C: Carrier.`Protocol` & ~Copyable & ~Escapable>(
+        _: C.Type
+    ) -> Bool
+    where C.Domain: ~Copyable & ~Escapable, C.Underlying: ~Copyable & ~Escapable {
+        true
+    }
+
     public static func describe<C: Carrier.`Protocol` & ~Copyable & ~Escapable>(
         _ c: borrowing C
     ) -> String {
