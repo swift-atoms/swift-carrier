@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-carrier-primitives",
+    name: "swift-carrier",
     platforms: [
         .macOS(.v27),
         .iOS(.v27),
@@ -21,16 +21,16 @@ let package = Package(
             targets: ["Carrier Protocol"]
         ),
         .library(
-            name: "Carrier Primitives",
-            targets: ["Carrier Primitives"]
+            name: "Carrier",
+            targets: ["Carrier"]
         ),
         .library(
-            name: "Carrier Primitives Standard Library Integration",
-            targets: ["Carrier Primitives Standard Library Integration"]
+            name: "Carrier Standard Library Integration",
+            targets: ["Carrier Standard Library Integration"]
         ),
         .library(
-            name: "Carrier Primitives Test Support",
-            targets: ["Carrier Primitives Test Support"]
+            name: "Carrier Test Support",
+            targets: ["Carrier Test Support"]
         ),
     ],
     dependencies: [],
@@ -46,39 +46,39 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Carrier Primitives",
+            name: "Carrier",
             dependencies: [
                 "Carrier Primitive",
                 "Carrier Protocol",
             ]
         ),
         .target(
-            name: "Carrier Primitives Standard Library Integration",
+            name: "Carrier Standard Library Integration",
             dependencies: [
-                "Carrier Primitives"
+                "Carrier"
             ]
         ),
         .target(
-            name: "Carrier Primitives Test Support",
+            name: "Carrier Test Support",
             dependencies: [
-                "Carrier Primitives",
-                "Carrier Primitives Standard Library Integration",
+                "Carrier",
+                "Carrier Standard Library Integration",
             ],
             path: "Tests/Support"
         ),
         .testTarget(
-            name: "Carrier Primitives Tests",
+            name: "Carrier Tests",
             dependencies: [
-                "Carrier Primitives",
-                "Carrier Primitives Test Support",
+                "Carrier",
+                "Carrier Test Support",
             ]
         ),
         .testTarget(
-            name: "Carrier Primitives Standard Library Integration Tests",
+            name: "Carrier Standard Library Integration Tests",
             dependencies: [
-                "Carrier Primitives",
-                "Carrier Primitives Standard Library Integration",
-                "Carrier Primitives Test Support",
+                "Carrier",
+                "Carrier Standard Library Integration",
+                "Carrier Test Support",
             ]
         ),
     ],

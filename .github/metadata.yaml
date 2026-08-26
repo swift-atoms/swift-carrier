@@ -1,6 +1,6 @@
 description: "The Carrier super-protocol for phantom-typed value wrappers in Swift."
 topics:
-  - primitives
+  - molecules
   - type-safety
   - ownership
   - phantom-types
