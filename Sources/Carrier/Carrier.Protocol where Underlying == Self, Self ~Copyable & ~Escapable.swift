@@ -1,6 +1,5 @@
-public import Carrier_Primitive
 
-extension Carrier.`Protocol` where Underlying == Self, Self: ~Escapable {
+extension Carrier.`Protocol` where Underlying == Self, Self: ~Copyable & ~Escapable {
 
     @_alwaysEmitIntoClient
     public var underlying: Self {

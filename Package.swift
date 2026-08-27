@@ -13,14 +13,6 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Carrier Primitive",
-            targets: ["Carrier Primitive"]
-        ),
-        .library(
-            name: "Carrier Protocol",
-            targets: ["Carrier Protocol"]
-        ),
-        .library(
             name: "Carrier",
             targets: ["Carrier"]
         ),
@@ -29,28 +21,15 @@ let package = Package(
             targets: ["Carrier Standard Library Integration"]
         ),
         .library(
-            name: "Carrier Test Support",
-            targets: ["Carrier Test Support"]
+            name: "Carrier Apple Foundation Integration",
+            targets: ["Carrier Apple Foundation Integration"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "Carrier Primitive",
-            dependencies: []
-        ),
-        .target(
-            name: "Carrier Protocol",
-            dependencies: [
-                "Carrier Primitive"
-            ]
-        ),
-        .target(
             name: "Carrier",
-            dependencies: [
-                "Carrier Primitive",
-                "Carrier Protocol",
-            ]
+            dependencies: []
         ),
         .target(
             name: "Carrier Standard Library Integration",
@@ -59,10 +38,16 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Carrier Test Support",
+            name: "Carrier Apple Foundation Integration",
             dependencies: [
                 "Carrier",
                 "Carrier Standard Library Integration",
+            ]
+        ),
+        .target(
+            name: "Carrier Test Support",
+            dependencies: [
+                "Carrier"
             ],
             path: "Tests/Support"
         ),
