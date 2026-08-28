@@ -13,16 +13,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Carrier Primitive",
-            targets: ["Carrier Primitive"]
+            name: "Carrier",
+            targets: ["Carrier"]
         ),
         .library(
             name: "Carrier Protocol",
             targets: ["Carrier Protocol"]
-        ),
-        .library(
-            name: "Carrier",
-            targets: ["Carrier"]
         ),
         .library(
             name: "Carrier Standard Library Integration",
@@ -36,49 +32,47 @@ let package = Package(
     dependencies: [],
     targets: [
         .target(
-            name: "Carrier Primitive",
+            name: "Carrier",
             dependencies: []
         ),
         .target(
             name: "Carrier Protocol",
             dependencies: [
-                "Carrier Primitive"
-            ]
-        ),
-        .target(
-            name: "Carrier",
-            dependencies: [
-                "Carrier Primitive",
-                "Carrier Protocol",
+                .target(name: "Carrier")
             ]
         ),
         .target(
             name: "Carrier Standard Library Integration",
             dependencies: [
-                "Carrier"
+                .target(name: "Carrier Protocol")
             ]
         ),
         .target(
             name: "Carrier Test Support",
             dependencies: [
-                "Carrier",
-                "Carrier Standard Library Integration",
+                .target(name: "Carrier Protocol"),
+                .target(name: "Carrier Standard Library Integration"),
             ],
-            path: "Tests/Support"
+            path: "Tests/Carrier Test Support"
         ),
         .testTarget(
             name: "Carrier Tests",
             dependencies: [
-                "Carrier",
-                "Carrier Test Support",
+                .target(name: "Carrier"),
+            ]
+        ),
+        .testTarget(
+            name: "Carrier Protocol Tests",
+            dependencies: [
+                .target(name: "Carrier Protocol"),
+                .target(name: "Carrier Test Support"),
             ]
         ),
         .testTarget(
             name: "Carrier Standard Library Integration Tests",
             dependencies: [
-                "Carrier",
-                "Carrier Standard Library Integration",
-                "Carrier Test Support",
+                .target(name: "Carrier Standard Library Integration"),
+                .target(name: "Carrier Test Support"),
             ]
         ),
     ],

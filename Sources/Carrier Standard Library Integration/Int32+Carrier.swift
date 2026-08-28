@@ -1,4 +1,4 @@
-public import Carrier
+public import Carrier_Protocol
 
 extension Int32: Carrier.`Protocol` {
 

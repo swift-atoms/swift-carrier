@@ -11,7 +11,7 @@ Unified super-protocol for phantom-typed value wrappers — `Carrier.\`Protocol\
 Nest an identifier wrapper under a real domain type and conform it to `Carrier.\`Protocol\`` via a standalone extension. The phantom `Domain` reuses the existing type as a compile-time tag — `User.ID` and `Order.ID` both wrap `UInt64`, but generic code distinguishes them:
 
 ```swift
-import Carrier
+import Carrier_Protocol
 
 struct User {
     var name: String
@@ -82,7 +82,7 @@ Both `User.ID` and `File.Handle` reach `some Carrier.\`Protocol\`<UInt64>` / `so
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-molecules/swift-carrier.git", branch: "main")
+    .package(url: "https://github.com/swift-atoms/swift-carrier.git", branch: "main")
 ]
 ```
 
@@ -90,7 +90,7 @@ dependencies: [
 .target(
     name: "App",
     dependencies: [
-        .product(name: "Carrier", package: "swift-carrier"),
+        .product(name: "Carrier Protocol", package: "swift-carrier"),
     ]
 )
 ```
@@ -101,15 +101,16 @@ Requires Swift 6.3.1 and macOS 26 / iOS 26 / tvOS 26 / watchOS 26 / visionOS 26 
 
 ## Architecture
 
-Three library products, zero external dependencies.
+Four library products, zero external dependencies.
 
 | Product | Target | Purpose |
 |---------|--------|---------|
-| `Carrier` | `Sources/Carrier/` | The `Carrier.\`Protocol\`<Underlying>` protocol + `extension Carrier.\`Protocol\` where Underlying == Self` default for trivial self-carriers; namespace `Carrier` and convenience alias `Carrying`. |
-| `Carrier Standard Library Integration` | `Sources/Carrier Standard Library Integration/` | Conforms 28 stdlib primitive types (integer families, floating-point, `Bool`, `String`, `Substring`, `Character`, `Unicode.Scalar`, `StaticString`, `Duration`, `ObjectIdentifier`, `Never`, plus the `~Escapable` span types `Span` / `MutableSpan` / `RawSpan` / `MutableRawSpan`) to `Carrier.\`Protocol\`` as trivial self-carriers. |
-| `Carrier Test Support` | `Tests/Support/` | Re-exports the main targets for test consumers. |
+| `Carrier` | `Sources/Carrier/` | The base `Carrier` namespace. |
+| `Carrier Protocol` | `Sources/Carrier Protocol/` | The `Carrier.\`Protocol\`<Underlying>` protocol + `extension Carrier.\`Protocol\` where Underlying == Self` default for trivial self-carriers and the convenience alias `Carrying`. |
+| `Carrier Standard Library Integration` | `Sources/Carrier Standard Library Integration/` | Conforms 28 standard-library types (integer families, floating-point, `Bool`, `String`, `Substring`, `Character`, `Unicode.Scalar`, `StaticString`, `Duration`, `ObjectIdentifier`, `Never`, plus the `~Escapable` span types `Span` / `MutableSpan` / `RawSpan` / `MutableRawSpan`) to `Carrier.\`Protocol\`` as trivial self-carriers. |
+| `Carrier Test Support` | `Tests/Carrier Test Support/` | Provides reusable protocol fixtures and reexports the protocol and integration layers for test consumers. |
 
-Import the narrowest product you need: `Carrier` for the protocol alone, or `Carrier Standard Library Integration` (which `@_exported public import`s the main target) when you want bare stdlib values to reach `some Carrier.\`Protocol\`<Int>` / `some Carrier.\`Protocol\`<String>` API sites.
+Import the narrowest product you need: `Carrier Protocol` for the protocol alone, or `Carrier Standard Library Integration` (which reexports the protocol layer) when you want bare standard-library values to reach `some Carrier.\`Protocol\`<Int>` / `some Carrier.\`Protocol\`<String>` API sites.
 
 Foundation-free.
 

@@ -1,4 +1,4 @@
-public import Carrier
+public import Carrier_Protocol
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
     extension Float16: Carrier.`Protocol` {
