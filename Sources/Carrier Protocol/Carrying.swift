@@ -1,3 +1,3 @@
-public import Carrier_Primitive
+public import Carrier
 
 public typealias Carrying = Carrier.`Protocol`

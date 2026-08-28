@@ -1,7 +1,0 @@
-public import Carrier_Primitives
-
-extension Int: Carrier.`Protocol` {
-
-    public typealias Underlying = Int
-
-}
