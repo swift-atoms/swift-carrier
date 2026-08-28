@@ -1,5 +1,3 @@
-public import Carrier
-
 @_disfavoredOverload
 @inlinable
 public func & <C: Carrier.`Protocol`>(lhs: C, rhs: C) -> C
