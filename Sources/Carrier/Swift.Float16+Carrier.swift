@@ -1,7 +1,5 @@
-public import Carrier
-
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
-    extension Float16: Carrier.`Protocol` {
+extension Swift.Float16: Carrier.`Protocol` {
 
         public typealias Underlying = Float16
     }

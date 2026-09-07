@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Carrier", targets: ["Carrier"]),
-        .library(name: "Carrier Standard Library Integration", targets: ["Carrier Standard Library Integration"]),
-        .library(name: "Carrier Foundation Library Integration", targets: ["Carrier Foundation Library Integration"]),
+
+        .library(name: "Carrier Foundation Integration", targets: ["Carrier Foundation Integration"]),
         .library(name: "Carrier Test Support", targets: ["Carrier Test Support"]),
     ],
     dependencies: [],
@@ -25,26 +25,18 @@ let package = Package(
             ],
             path: "Sources/Carrier"
         ),
+        
         .target(
-            name: "Carrier Standard Library Integration",
+            name: "Carrier Foundation Integration",
             dependencies: [
                 .target(name: "Carrier"),
             ],
-            path: "Sources/Carrier Standard Library Integration"
-        ),
-        .target(
-            name: "Carrier Foundation Library Integration",
-            dependencies: [
-                .target(name: "Carrier"),
-                .target(name: "Carrier Standard Library Integration"),
-            ],
-            path: "Sources/Carrier Foundation Library Integration"
+            path: "Sources/Carrier Foundation Integration"
         ),
         .target(
             name: "Carrier Test Support",
             dependencies: [
                 .target(name: "Carrier"),
-                .target(name: "Carrier Standard Library Integration"),
             ],
             path: "Tests/Support"
         ),
@@ -53,8 +45,7 @@ let package = Package(
             dependencies: [
                 .target(name: "Carrier"),
                 .target(name: "Carrier Test Support"),
-                .target(name: "Carrier Standard Library Integration"),
-                .target(name: "Carrier Foundation Library Integration"),
+                .target(name: "Carrier Foundation Integration"),
             ],
             path: "Tests/Carrier Tests"
         ),

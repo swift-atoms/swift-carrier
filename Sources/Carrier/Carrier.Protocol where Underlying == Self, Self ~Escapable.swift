@@ -1,4 +1,3 @@
-
 extension Carrier.`Protocol` where Underlying == Self, Self: ~Escapable {
 
     @_alwaysEmitIntoClient
