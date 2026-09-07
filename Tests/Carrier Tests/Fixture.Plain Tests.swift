@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Fixture.Plain Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Plain carriers preserve their stored integer values` {
+    @Suite struct `Plain carriers store and round trip integers` {}
+    @Suite struct `Plain carriers preserve integer extremes` {}
+    @Suite struct `Plain carriers expose their underlying integer and default domain` {}
+    @Suite(.serialized) struct `No plain carrier performance cases are defined` {}
 }
 
-extension `Fixture.Plain Tests`.Unit {
+extension `Plain carriers preserve their stored integer values`.`Plain carriers store and round trip integers` {
 
     @Test
     func `Plain stores and reads Int underlying`() {
@@ -25,7 +25,7 @@ extension `Fixture.Plain Tests`.Unit {
     }
 }
 
-extension `Fixture.Plain Tests`.`Edge Case` {
+extension `Plain carriers preserve their stored integer values`.`Plain carriers preserve integer extremes` {
 
     @Test
     func `Plain handles Int min`() {
@@ -46,7 +46,7 @@ extension `Fixture.Plain Tests`.`Edge Case` {
     }
 }
 
-extension `Fixture.Plain Tests`.Integration {
+extension `Plain carriers preserve their stored integer values`.`Plain carriers expose their underlying integer and default domain` {
 
     @Test
     func `Plain satisfies some Carrier<Int>`() {

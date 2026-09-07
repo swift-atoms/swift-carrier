@@ -2,18 +2,18 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Carrier.Protocol where Self ~Copyable & ~Escapable Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Carrier initialization preserves validation and capability constraints` {
+    @Suite struct `Validated carriers construct copyable noncopyable and nonescapable values` {}
+    @Suite struct `Carrier validation failures propagate their typed errors` {}
+    @Suite struct `No validated carrier integration cases are defined` {}
+    @Suite(.serialized) struct `No validated carrier performance cases are defined` {}
 }
 
 enum Validation: Swift.Error, Sendable {
     case rejected
 }
 
-extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.Unit {
+extension `Carrier initialization preserves validation and capability constraints`.`Validated carriers construct copyable noncopyable and nonescapable values` {
 
     @Test
     func `Q1 validation-pass constructs Plain via default throwing init`() throws(Validation) {
@@ -40,7 +40,7 @@ extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.Unit {
     }
 }
 
-extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Edge Case` {
+extension `Carrier initialization preserves validation and capability constraints`.`Carrier validation failures propagate their typed errors` {
 
     @Test
     func `Q1 validation-fail throws closure's typed error`() {

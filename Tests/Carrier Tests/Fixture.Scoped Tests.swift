@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Fixture.Scoped Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Scoped carriers preserve noncopyable and nonescapable capabilities` {
+    @Suite struct `Scoped carriers admit noncopyable nonescapable underlying values` {}
+    @Suite struct `Scoped carriers preserve zero and negative values` {}
+    @Suite struct `Scoped carriers satisfy generic carrier requirements` {}
+    @Suite(.serialized) struct `No scoped carrier performance cases are defined` {}
 }
 
-extension `Fixture.Scoped Tests`.Unit {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers admit noncopyable nonescapable underlying values` {
 
     @Test
     func `Scoped conforms with noncopyable nonescapable underlying`() {
@@ -19,7 +19,7 @@ extension `Fixture.Scoped Tests`.Unit {
     }
 }
 
-extension `Fixture.Scoped Tests`.`Edge Case` {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers preserve zero and negative values` {
 
     @Test
     func `Scoped handles raw zero`() {
@@ -34,7 +34,7 @@ extension `Fixture.Scoped Tests`.`Edge Case` {
     }
 }
 
-extension `Fixture.Scoped Tests`.Integration {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers satisfy generic carrier requirements` {
 
     @Test
     func `Scoped satisfies generic Carrier contract`() {

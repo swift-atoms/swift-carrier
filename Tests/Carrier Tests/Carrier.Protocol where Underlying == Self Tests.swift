@@ -2,11 +2,11 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Carrier.Protocol where Underlying == Self Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Self carriers receive default conversion operations` {
+    @Suite struct `Self carrier defaults preserve construction and underlying values` {}
+    @Suite struct `No self carrier boundary cases are defined` {}
+    @Suite struct `Self carriers satisfy generic underlying type constraints` {}
+    @Suite(.serialized) struct `No self carrier performance cases are defined` {}
 }
 
 private struct Cardinal: Carrier.`Protocol` {
@@ -17,7 +17,7 @@ extension Cardinal {
     typealias Underlying = Self
 }
 
-extension `Carrier.Protocol where Underlying == Self Tests`.Unit {
+extension `Self carriers receive default conversion operations`.`Self carrier defaults preserve construction and underlying values` {
 
     @Test
     func `default extension provides underlying for trivial self-carrier`() {
@@ -40,7 +40,7 @@ extension `Carrier.Protocol where Underlying == Self Tests`.Unit {
     }
 }
 
-extension `Carrier.Protocol where Underlying == Self Tests`.Integration {
+extension `Self carriers receive default conversion operations`.`Self carriers satisfy generic underlying type constraints` {
 
     @Test
     func `synthetic trivial conformer reaches some Carrier<U> API`() {

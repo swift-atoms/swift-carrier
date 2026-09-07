@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Int32+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Int32 preserves its carrier representation` {
+    @Suite struct `Int32 carrier conversion round trips through its underlying value` {}
+    @Suite struct `Int32 carrier conversions preserve boundary values` {}
+    @Suite struct `Int32 participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Int32 carrier performance cases are defined` {}
 }
 
-extension `Int32+Carrier Tests`.Unit {
+extension `Int32 preserves its carrier representation`.`Int32 carrier conversion round trips through its underlying value` {
 
     @Test
     func `Int32 round-trips via underlying`() {
@@ -24,7 +24,7 @@ extension `Int32+Carrier Tests`.Unit {
     }
 }
 
-extension `Int32+Carrier Tests`.`Edge Case` {
+extension `Int32 preserves its carrier representation`.`Int32 carrier conversions preserve boundary values` {
 
     @Test
     func `Int32 handles min`() {
@@ -45,7 +45,7 @@ extension `Int32+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Int32+Carrier Tests`.Integration {
+extension `Int32 preserves its carrier representation`.`Int32 participates in generic carrier APIs` {
 
     @Test
     func `Int32 satisfies some Carrier<Int32>`() {

@@ -4,14 +4,14 @@ import Testing
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
 
     @Suite
-    struct `Float16+Carrier Tests` {
-        @Suite struct Unit {}
-        @Suite struct `Edge Case` {}
-        @Suite struct Integration {}
-        @Suite(.serialized) struct Performance {}
+    struct `Float16 preserves its carrier representation` {
+        @Suite struct `Float16 carrier conversion round trips through its underlying value` {}
+        @Suite struct `Float16 carrier conversions preserve exceptional floating point values` {}
+        @Suite struct `Float16 participates in generic carrier APIs` {}
+        @Suite(.serialized) struct `No Float16 carrier performance cases are defined` {}
     }
 
-    extension `Float16+Carrier Tests`.Unit {
+    extension `Float16 preserves its carrier representation`.`Float16 carrier conversion round trips through its underlying value` {
 
         @Test
         func `Float16 round-trips via underlying`() {
@@ -26,7 +26,7 @@ import Testing
         }
     }
 
-    extension `Float16+Carrier Tests`.`Edge Case` {
+    extension `Float16 preserves its carrier representation`.`Float16 carrier conversions preserve exceptional floating point values` {
 
         @Test
         func `Float16 handles zero`() {
@@ -47,7 +47,7 @@ import Testing
         }
     }
 
-    extension `Float16+Carrier Tests`.Integration {
+    extension `Float16 preserves its carrier representation`.`Float16 participates in generic carrier APIs` {
 
         @Test
         func `Float16 satisfies some Carrier<Float16>`() {

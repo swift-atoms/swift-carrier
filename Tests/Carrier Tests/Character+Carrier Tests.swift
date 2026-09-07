@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Character+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Character preserves its carrier representation` {
+    @Suite struct `Character carrier conversion round trips through its underlying value` {}
+    @Suite struct `Character carrier conversion preserves text boundaries and Unicode content` {}
+    @Suite struct `Character participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Character carrier performance cases are defined` {}
 }
 
-extension `Character+Carrier Tests`.Unit {
+extension `Character preserves its carrier representation`.`Character carrier conversion round trips through its underlying value` {
 
     @Test
     func `Character round-trips via underlying`() {
@@ -24,7 +24,7 @@ extension `Character+Carrier Tests`.Unit {
     }
 }
 
-extension `Character+Carrier Tests`.`Edge Case` {
+extension `Character preserves its carrier representation`.`Character carrier conversion preserves text boundaries and Unicode content` {
 
     @Test
     func `Character handles emoji grapheme cluster`() {
@@ -45,7 +45,7 @@ extension `Character+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Character+Carrier Tests`.Integration {
+extension `Character preserves its carrier representation`.`Character participates in generic carrier APIs` {
 
     @Test
     func `Character satisfies some Carrier<Character>`() {

@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Substring+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Substring preserves its carrier representation` {
+    @Suite struct `Substring carrier conversion round trips through its underlying value` {}
+    @Suite struct `Substring carrier conversion preserves text boundaries and Unicode content` {}
+    @Suite struct `Substring participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Substring carrier performance cases are defined` {}
 }
 
-extension `Substring+Carrier Tests`.Unit {
+extension `Substring preserves its carrier representation`.`Substring carrier conversion round trips through its underlying value` {
 
     @Test
     func `Substring round-trips via underlying`() {
@@ -19,7 +19,7 @@ extension `Substring+Carrier Tests`.Unit {
     }
 }
 
-extension `Substring+Carrier Tests`.`Edge Case` {
+extension `Substring preserves its carrier representation`.`Substring carrier conversion preserves text boundaries and Unicode content` {
 
     @Test
     func `Substring handles empty slice`() {
@@ -43,7 +43,7 @@ extension `Substring+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Substring+Carrier Tests`.Integration {
+extension `Substring preserves its carrier representation`.`Substring participates in generic carrier APIs` {
 
     @Test
     func `Substring satisfies some Carrier<Substring>`() {

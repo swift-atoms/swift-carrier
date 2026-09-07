@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Fixture.Unique Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Unique carriers lend noncopyable underlying values` {
+    @Suite struct `Unique carrier reads borrow the underlying value` {}
+    @Suite struct `Unique carriers preserve zero and negative values` {}
+    @Suite struct `Unique carriers satisfy generic carrier requirements` {}
+    @Suite(.serialized) struct `No unique carrier performance cases are defined` {}
 }
 
-extension `Fixture.Unique Tests`.Unit {
+extension `Unique carriers lend noncopyable underlying values`.`Unique carrier reads borrow the underlying value` {
 
     @Test
     func `Unique reads underlying via borrow`() {
@@ -19,7 +19,7 @@ extension `Fixture.Unique Tests`.Unit {
     }
 }
 
-extension `Fixture.Unique Tests`.`Edge Case` {
+extension `Unique carriers lend noncopyable underlying values`.`Unique carriers preserve zero and negative values` {
 
     @Test
     func `Unique handles raw zero`() {
@@ -34,7 +34,7 @@ extension `Fixture.Unique Tests`.`Edge Case` {
     }
 }
 
-extension `Fixture.Unique Tests`.Integration {
+extension `Unique carriers lend noncopyable underlying values`.`Unique carriers satisfy generic carrier requirements` {
 
     @Test
     func `Unique satisfies generic Carrier contract`() {

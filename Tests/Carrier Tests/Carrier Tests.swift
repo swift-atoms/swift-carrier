@@ -2,7 +2,7 @@ import Carrier
 import Testing
 
 @Suite
-struct `Carrier Tests` {
+struct `Carrier permits domain specific namespace extensions` {
     @Test
     func `the namespace supports domain-specific extensions`() {
         #expect(MemoryLayout<Carrier.Fixture>.size == 0)

@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Duration+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Duration preserves its carrier representation` {
+    @Suite struct `Duration carrier conversion round trips through its underlying value` {}
+    @Suite struct `Duration carrier conversion preserves sign precision and large values` {}
+    @Suite struct `Duration participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Duration carrier performance cases are defined` {}
 }
 
-extension `Duration+Carrier Tests`.Unit {
+extension `Duration preserves its carrier representation`.`Duration carrier conversion round trips through its underlying value` {
 
     @Test
     func `Duration round-trips via underlying`() {
@@ -18,7 +18,7 @@ extension `Duration+Carrier Tests`.Unit {
     }
 }
 
-extension `Duration+Carrier Tests`.`Edge Case` {
+extension `Duration preserves its carrier representation`.`Duration carrier conversion preserves sign precision and large values` {
 
     @Test
     func `Duration handles zero`() {
@@ -45,7 +45,7 @@ extension `Duration+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Duration+Carrier Tests`.Integration {
+extension `Duration preserves its carrier representation`.`Duration participates in generic carrier APIs` {
 
     @Test
     func `Duration satisfies some Carrier<Duration>`() {

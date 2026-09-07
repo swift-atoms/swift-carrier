@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Never+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Never satisfies carrier requirements at the type level` {
+    @Suite struct `No Never carrier construction cases are defined` {}
+    @Suite struct `Never exposes its carrier associated types without constructing values` {}
+    @Suite struct `No Never carrier integration cases are defined` {}
+    @Suite(.serialized) struct `No Never carrier performance cases are defined` {}
 }
 
-extension `Never+Carrier Tests`.`Edge Case` {
+extension `Never satisfies carrier requirements at the type level`.`Never exposes its carrier associated types without constructing values` {
 
     @Test
     func `Never conforms to Carrier at the type level`() {

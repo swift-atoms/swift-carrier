@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Float+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Float preserves its carrier representation` {
+    @Suite struct `Float carrier conversion round trips through its underlying value` {}
+    @Suite struct `Float carrier conversions preserve exceptional floating point values` {}
+    @Suite struct `Float participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Float carrier performance cases are defined` {}
 }
 
-extension `Float+Carrier Tests`.Unit {
+extension `Float preserves its carrier representation`.`Float carrier conversion round trips through its underlying value` {
 
     @Test
     func `Float round-trips via underlying`() {
@@ -24,7 +24,7 @@ extension `Float+Carrier Tests`.Unit {
     }
 }
 
-extension `Float+Carrier Tests`.`Edge Case` {
+extension `Float preserves its carrier representation`.`Float carrier conversions preserve exceptional floating point values` {
 
     @Test
     func `Float handles zero`() {
@@ -51,7 +51,7 @@ extension `Float+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Float+Carrier Tests`.Integration {
+extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs` {
 
     @Test
     func `Float satisfies some Carrier<Float>`() {

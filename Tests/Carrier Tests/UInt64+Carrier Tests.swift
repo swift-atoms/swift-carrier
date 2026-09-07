@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `UInt64+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `UInt64 preserves its carrier representation` {
+    @Suite struct `UInt64 carrier conversion round trips through its underlying value` {}
+    @Suite struct `UInt64 carrier conversions preserve boundary values` {}
+    @Suite struct `UInt64 participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No UInt64 carrier performance cases are defined` {}
 }
 
-extension `UInt64+Carrier Tests`.Unit {
+extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversion round trips through its underlying value` {
 
     @Test
     func `UInt64 round-trips via underlying`() {
@@ -24,7 +24,7 @@ extension `UInt64+Carrier Tests`.Unit {
     }
 }
 
-extension `UInt64+Carrier Tests`.`Edge Case` {
+extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversions preserve boundary values` {
 
     @Test
     func `UInt64 handles min (zero)`() {
@@ -39,7 +39,7 @@ extension `UInt64+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `UInt64+Carrier Tests`.Integration {
+extension `UInt64 preserves its carrier representation`.`UInt64 participates in generic carrier APIs` {
 
     @Test
     func `UInt64 satisfies some Carrier<UInt64>`() {

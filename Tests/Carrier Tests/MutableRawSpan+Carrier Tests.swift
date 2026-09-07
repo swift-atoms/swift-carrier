@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `MutableRawSpan+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `MutableRawSpan preserves its carrier representation` {
+    @Suite struct `MutableRawSpan lends its underlying carrier representation` {}
+    @Suite struct `MutableRawSpan preserves buffers and satisfies carrier constraints` {}
+    @Suite struct `No MutableRawSpan carrier integration cases are defined` {}
+    @Suite(.serialized) struct `No MutableRawSpan carrier performance cases are defined` {}
 }
 
-extension `MutableRawSpan+Carrier Tests`.Unit {
+extension `MutableRawSpan preserves its carrier representation`.`MutableRawSpan lends its underlying carrier representation` {
 
     @Test
     func `MutableRawSpan underlying yields self via _read coroutine`() {
@@ -22,7 +22,7 @@ extension `MutableRawSpan+Carrier Tests`.Unit {
     }
 }
 
-extension `MutableRawSpan+Carrier Tests`.`Edge Case` {
+extension `MutableRawSpan preserves its carrier representation`.`MutableRawSpan preserves buffers and satisfies carrier constraints` {
 
     @Test
     func `MutableRawSpan conforms at the type level`() {

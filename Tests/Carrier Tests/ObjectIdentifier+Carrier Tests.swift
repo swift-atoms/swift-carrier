@@ -2,16 +2,16 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `ObjectIdentifier+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `ObjectIdentifier preserves its carrier representation` {
+    @Suite struct `ObjectIdentifier carrier conversion round trips through its underlying value` {}
+    @Suite struct `ObjectIdentifier carrier values distinguish separate instances` {}
+    @Suite struct `ObjectIdentifier participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No ObjectIdentifier carrier performance cases are defined` {}
 }
 
 private final class Token {}
 
-extension `ObjectIdentifier+Carrier Tests`.Unit {
+extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier carrier conversion round trips through its underlying value` {
 
     @Test
     func `ObjectIdentifier round-trips via underlying`() {
@@ -28,7 +28,7 @@ extension `ObjectIdentifier+Carrier Tests`.Unit {
     }
 }
 
-extension `ObjectIdentifier+Carrier Tests`.`Edge Case` {
+extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier carrier values distinguish separate instances` {
 
     @Test
     func `ObjectIdentifier distinguishes distinct instances`() {
@@ -40,7 +40,7 @@ extension `ObjectIdentifier+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `ObjectIdentifier+Carrier Tests`.Integration {
+extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier participates in generic carrier APIs` {
 
     @Test
     func `ObjectIdentifier satisfies some Carrier<ObjectIdentifier>`() {

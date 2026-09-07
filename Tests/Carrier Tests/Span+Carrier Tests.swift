@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Span+Carrier Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+struct `Span preserves its carrier representation` {
+    @Suite struct `Span lends its underlying carrier representation` {}
+    @Suite struct `Span preserves buffers and satisfies carrier constraints` {}
+    @Suite struct `Span participates in generic carrier APIs` {}
+    @Suite(.serialized) struct `No Span carrier performance cases are defined` {}
 }
 
-extension `Span+Carrier Tests`.Unit {
+extension `Span preserves its carrier representation`.`Span lends its underlying carrier representation` {
 
     @Test
     func `Span underlying yields self via _read coroutine`() {
@@ -22,7 +22,7 @@ extension `Span+Carrier Tests`.Unit {
     }
 }
 
-extension `Span+Carrier Tests`.`Edge Case` {
+extension `Span preserves its carrier representation`.`Span preserves buffers and satisfies carrier constraints` {
 
     @Test
     func `Span<UInt8> conforms at the type level`() {
@@ -50,7 +50,7 @@ extension `Span+Carrier Tests`.`Edge Case` {
     }
 }
 
-extension `Span+Carrier Tests`.Integration {
+extension `Span preserves its carrier representation`.`Span participates in generic carrier APIs` {
 
     @Test
     func `Span satisfies generic Carrier<Span<UInt8>> dispatch`() {
