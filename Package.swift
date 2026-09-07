@@ -14,6 +14,7 @@ let package = Package(
     products: [
         .library(name: "Carrier", targets: ["Carrier"]),
         .library(name: "Carrier Standard Library Integration", targets: ["Carrier Standard Library Integration"]),
+        .library(name: "Carrier Foundation Library Integration", targets: ["Carrier Foundation Library Integration"]),
         .library(name: "Carrier Test Support", targets: ["Carrier Test Support"]),
     ],
     dependencies: [],
@@ -21,13 +22,23 @@ let package = Package(
         .target(
             name: "Carrier",
             dependencies: [
-            ]
+            ],
+            path: "Sources/Carrier"
         ),
         .target(
             name: "Carrier Standard Library Integration",
             dependencies: [
                 .target(name: "Carrier"),
-            ]
+            ],
+            path: "Sources/Carrier Standard Library Integration"
+        ),
+        .target(
+            name: "Carrier Foundation Library Integration",
+            dependencies: [
+                .target(name: "Carrier"),
+                .target(name: "Carrier Standard Library Integration"),
+            ],
+            path: "Sources/Carrier Foundation Library Integration"
         ),
         .target(
             name: "Carrier Test Support",
@@ -41,28 +52,18 @@ let package = Package(
             name: "Carrier Tests",
             dependencies: [
                 .target(name: "Carrier"),
-            ]
-        ),
-        .testTarget(
-            name: "Carrier Protocol Tests",
-            dependencies: [
-                .target(name: "Carrier"),
                 .target(name: "Carrier Test Support"),
-            ]
-        ),
-        .testTarget(
-            name: "Carrier Standard Library Integration Tests",
-            dependencies: [
                 .target(name: "Carrier Standard Library Integration"),
-                .target(name: "Carrier Test Support"),
-            ]
+                .target(name: "Carrier Foundation Library Integration"),
+            ],
+            path: "Tests/Carrier Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
 )
 
-for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    let ecosystem: [SwiftSetting] = [
+for target in package.targets {
+    target.swiftSettings = [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
@@ -71,8 +72,4 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableExperimentalFeature("Lifetimes"),
         .enableUpcomingFeature("InferIsolatedConformances"),
     ]
-
-    let package: [SwiftSetting] = []
-
-    target.swiftSettings = (target.swiftSettings ?? []) + ecosystem + package
 }

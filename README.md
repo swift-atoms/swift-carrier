@@ -5,4 +5,4 @@ Import `Carrier` to use the core API, including the protocols and operations for
 
 Import `Carrier_Standard_Library_Integration` for standard-library integration APIs.
 
-`Carrier Test Support` lives in `Tests/Support`. Foundation integration can be added as `Carrier Foundation Integration` when needed.
+`Carrier Test Support` lives in `Tests/Support`. Foundation integration can be added as `Carrier Foundation Library Integration` when needed.

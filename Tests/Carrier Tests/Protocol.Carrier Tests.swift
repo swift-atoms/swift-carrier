@@ -2,14 +2,14 @@ import Carrier_Test_Support
 import Testing
 
 @Suite
-struct `Carrier Tests` {
+struct CarrierProtocolTests {
     @Suite struct Unit {}
     @Suite struct `Edge Case` {}
     @Suite struct Integration {}
     @Suite(.serialized) struct Performance {}
 }
 
-extension `Carrier Tests`.Integration {
+extension CarrierProtocolTests.Integration {
 
     @Test
     func `describe reflects Underlying and Domain at type level`() {
