@@ -1,4 +1,3 @@
-public import Carrier
 
 extension Carrier.`Protocol`
 where

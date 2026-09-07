@@ -12,48 +12,30 @@ let package = Package(
         .visionOS(.v27),
     ],
     products: [
-        .library(
-            name: "Carrier",
-            targets: ["Carrier"]
-        ),
-        .library(
-            name: "Carrier Protocol",
-            targets: ["Carrier Protocol"]
-        ),
-        .library(
-            name: "Carrier Standard Library Integration",
-            targets: ["Carrier Standard Library Integration"]
-        ),
-        .library(
-            name: "Carrier Test Support",
-            targets: ["Carrier Test Support"]
-        ),
+        .library(name: "Carrier", targets: ["Carrier"]),
+        .library(name: "Carrier Standard Library Integration", targets: ["Carrier Standard Library Integration"]),
+        .library(name: "Carrier Test Support", targets: ["Carrier Test Support"]),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "Carrier",
-            dependencies: []
-        ),
-        .target(
-            name: "Carrier Protocol",
             dependencies: [
-                .target(name: "Carrier")
             ]
         ),
         .target(
             name: "Carrier Standard Library Integration",
             dependencies: [
-                .target(name: "Carrier Protocol")
+                .target(name: "Carrier"),
             ]
         ),
         .target(
             name: "Carrier Test Support",
             dependencies: [
-                .target(name: "Carrier Protocol"),
+                .target(name: "Carrier"),
                 .target(name: "Carrier Standard Library Integration"),
             ],
-            path: "Tests/Carrier Test Support"
+            path: "Tests/Support"
         ),
         .testTarget(
             name: "Carrier Tests",
@@ -64,7 +46,7 @@ let package = Package(
         .testTarget(
             name: "Carrier Protocol Tests",
             dependencies: [
-                .target(name: "Carrier Protocol"),
+                .target(name: "Carrier"),
                 .target(name: "Carrier Test Support"),
             ]
         ),
