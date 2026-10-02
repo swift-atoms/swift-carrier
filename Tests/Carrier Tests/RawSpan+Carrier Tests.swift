@@ -14,9 +14,9 @@ extension `RawSpan preserves its carrier representation`.`RawSpan lends its unde
     @Test
     func `RawSpan underlying yields self via _read coroutine`() {
         let bytes: [UInt8] = [1, 2, 3, 4]
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
-            let raw = RawSpan(_elements: span)
+            let raw = unsafe RawSpan(unsafeElements: span)
             #expect(raw.underlying.byteCount == 4)
         }
     }
@@ -33,9 +33,9 @@ extension `RawSpan preserves its carrier representation`.`RawSpan preserves buff
     @Test
     func `RawSpan underlying preserves empty buffer`() {
         let bytes: [UInt8] = []
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
-            let raw = RawSpan(_elements: span)
+            let raw = unsafe RawSpan(unsafeElements: span)
             #expect(raw.underlying.byteCount == 0)
         }
     }

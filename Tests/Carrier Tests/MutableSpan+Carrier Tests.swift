@@ -14,7 +14,7 @@ extension `MutableSpan preserves its carrier representation`.`MutableSpan lends 
     @Test
     func `MutableSpan underlying yields self via _read coroutine`() {
         var bytes: [UInt8] = [10, 20, 30]
-        unsafe bytes.withUnsafeMutableBufferPointer { buffer in
+        bytes.withUnsafeMutableBufferPointer { buffer in
             let span = unsafe MutableSpan<UInt8>(_unsafeElements: buffer)
             #expect(span.underlying.count == 3)
         }
@@ -32,7 +32,7 @@ extension `MutableSpan preserves its carrier representation`.`MutableSpan preser
     @Test
     func `MutableSpan underlying preserves empty buffer`() {
         var bytes: [UInt8] = []
-        unsafe bytes.withUnsafeMutableBufferPointer { buffer in
+        bytes.withUnsafeMutableBufferPointer { buffer in
             let span = unsafe MutableSpan<UInt8>(_unsafeElements: buffer)
             let isEmpty = span.underlying.isEmpty
             #expect(isEmpty)

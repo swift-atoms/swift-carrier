@@ -17,7 +17,7 @@ extension `Carrier initialization preserves validation and capability constraint
 
     @Test
     func `Q1 validation-pass constructs Plain via default throwing init`() throws(Validation) {
-        let c = try Fixture.Plain(42) { v in
+        let c = Fixture.Plain(42) { v in
             #expect(v == 42)
         }
         #expect(c.underlying == 42)
@@ -26,7 +26,7 @@ extension `Carrier initialization preserves validation and capability constraint
     @Test
     func `Q2 validation-pass constructs Unique via default throwing init`() throws(Validation) {
         let resource = Fixture.Unique.Resource(raw: 7)
-        let u = try Fixture.Unique(resource) { _ in
+        let u = Fixture.Unique(resource) { _ in
 
         }
         #expect(u.underlying.raw == 7)
@@ -35,7 +35,7 @@ extension `Carrier initialization preserves validation and capability constraint
     @Test
     func `Q4 validation-pass constructs Scoped via default throwing init`() throws(Validation) {
         let resource = Fixture.Scoped.Resource(raw: 11)
-        let s = try Fixture.Scoped(resource) { _ in }
+        let s = Fixture.Scoped(resource) { _ in }
         #expect(s.underlying.raw == 11)
     }
 }

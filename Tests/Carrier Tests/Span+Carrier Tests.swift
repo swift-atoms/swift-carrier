@@ -15,7 +15,7 @@ extension `Span preserves its carrier representation`.`Span lends its underlying
     func `Span underlying yields self via _read coroutine`() {
 
         let bytes: [UInt8] = [10, 20, 30]
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
             #expect(span.underlying.count == 3)
         }
@@ -33,7 +33,7 @@ extension `Span preserves its carrier representation`.`Span preserves buffers an
     @Test
     func `Span underlying preserves empty buffer`() {
         let bytes: [UInt8] = []
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
             let isEmpty = span.underlying.isEmpty
             #expect(isEmpty)
@@ -43,7 +43,7 @@ extension `Span preserves its carrier representation`.`Span preserves buffers an
     @Test
     func `Span underlying preserves single-element buffer`() {
         let bytes: [UInt8] = [42]
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
             #expect(span.underlying.count == 1)
         }
@@ -55,7 +55,7 @@ extension `Span preserves its carrier representation`.`Span participates in gene
     @Test
     func `Span satisfies generic Carrier<Span<UInt8>> dispatch`() {
         let bytes: [UInt8] = [1, 2, 3, 4, 5]
-        unsafe bytes.withUnsafeBufferPointer { buffer in
+        bytes.withUnsafeBufferPointer { buffer in
             let span = unsafe Span<UInt8>(_unsafeElements: buffer)
 
             func _count<C: Carrier.`Protocol` & ~Escapable>(
