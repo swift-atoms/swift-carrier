@@ -9,7 +9,7 @@ struct `Carrier initialization preserves validation and capability constraints` 
     @Suite(.serialized) struct `No validated carrier performance cases are defined` {}
 }
 
-enum Validation: Swift.Error, Sendable {
+enum Validation: Swift::Error, Sendable {
     case rejected
 }
 

@@ -1,4 +1,4 @@
-extension Swift.Double: Carrier.`Protocol` {
+extension Swift::Double: Carrier.`Protocol` {
 
     public typealias Underlying = Double
 }

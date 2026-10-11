@@ -1,4 +1,4 @@
-extension Swift.Int16: Carrier.`Protocol` {
+extension Swift::Int16: Carrier.`Protocol` {
 
     public typealias Underlying = Int16
 }

@@ -1,4 +1,4 @@
-extension Swift.Duration: Carrier.`Protocol` {
+extension Swift::Duration: Carrier.`Protocol` {
 
     public typealias Underlying = Duration
 }

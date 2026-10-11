@@ -1,5 +1,5 @@
-extension Swift.Span: Carrier.`Protocol` {
+extension Swift::Span: Carrier.`Protocol` {
 
-    public typealias Underlying = Swift.Span<Element>
+    public typealias Underlying = Swift::Span<Element>
 
 }

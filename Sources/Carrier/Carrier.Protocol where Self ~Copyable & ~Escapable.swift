@@ -6,7 +6,7 @@ where
 
     @_alwaysEmitIntoClient
     @_lifetime(copy underlying)
-    public init<E: Swift.Error>(
+    public init<E: Swift::Error>(
         _ underlying: consuming Underlying,
         validate: (borrowing Underlying) throws(E) -> Void
     ) throws(E) {

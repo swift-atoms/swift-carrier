@@ -1,4 +1,4 @@
-extension Swift.MutableRawSpan: Carrier.`Protocol` {
+extension Swift::MutableRawSpan: Carrier.`Protocol` {
 
     public typealias Underlying = MutableRawSpan
 

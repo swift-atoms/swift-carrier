@@ -1,4 +1,4 @@
-extension Swift.Bool: Carrier.`Protocol` {
+extension Swift::Bool: Carrier.`Protocol` {
 
     public typealias Underlying = Bool
 }
