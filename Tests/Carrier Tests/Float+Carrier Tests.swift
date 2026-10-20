@@ -9,7 +9,9 @@ struct `Float preserves its carrier representation` {
     @Suite(.serialized) struct `No Float carrier performance cases are defined` {}
 }
 
-extension `Float preserves its carrier representation`.`Float carrier conversion round trips through its underlying value` {
+extension `Float preserves its carrier representation`
+    .`Float carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Float round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Float preserves its carrier representation`.`Float carrier conversion
     }
 }
 
-extension `Float preserves its carrier representation`.`Float carrier conversions preserve exceptional floating point values` {
+extension `Float preserves its carrier representation`
+    .`Float carrier conversions preserve exceptional floating point values`
+{
 
     @Test
     func `Float handles zero`() {
@@ -51,7 +55,8 @@ extension `Float preserves its carrier representation`.`Float carrier conversion
     }
 }
 
-extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs` {
+extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs`
+{
 
     @Test
     func `Float satisfies some Carrier<Float>`() {

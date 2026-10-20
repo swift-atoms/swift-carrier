@@ -9,7 +9,9 @@ struct `RawSpan preserves its carrier representation` {
     @Suite(.serialized) struct `No RawSpan carrier performance cases are defined` {}
 }
 
-extension `RawSpan preserves its carrier representation`.`RawSpan lends its underlying carrier representation` {
+extension `RawSpan preserves its carrier representation`
+    .`RawSpan lends its underlying carrier representation`
+{
 
     @Test
     func `RawSpan underlying yields self via _read coroutine`() {
@@ -22,7 +24,9 @@ extension `RawSpan preserves its carrier representation`.`RawSpan lends its unde
     }
 }
 
-extension `RawSpan preserves its carrier representation`.`RawSpan preserves buffers and satisfies carrier constraints` {
+extension `RawSpan preserves its carrier representation`
+    .`RawSpan preserves buffers and satisfies carrier constraints`
+{
 
     @Test
     func `RawSpan conforms at the type level`() {

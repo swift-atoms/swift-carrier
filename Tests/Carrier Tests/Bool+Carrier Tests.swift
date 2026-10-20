@@ -9,7 +9,9 @@ struct `Bool preserves its carrier representation` {
     @Suite(.serialized) struct `No Bool carrier performance cases are defined` {}
 }
 
-extension `Bool preserves its carrier representation`.`Bool carrier conversion round trips through its underlying value` {
+extension `Bool preserves its carrier representation`
+    .`Bool carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Bool true round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Bool preserves its carrier representation`.`Bool carrier conversion r
     }
 }
 
-extension `Bool preserves its carrier representation`.`False Boolean values preserve their carrier representation` {
+extension `Bool preserves its carrier representation`
+    .`False Boolean values preserve their carrier representation`
+{
 
     @Test
     func `Bool false round-trips via underlying`() {

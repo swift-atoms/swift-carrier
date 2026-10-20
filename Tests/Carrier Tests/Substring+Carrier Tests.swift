@@ -9,7 +9,9 @@ struct `Substring preserves its carrier representation` {
     @Suite(.serialized) struct `No Substring carrier performance cases are defined` {}
 }
 
-extension `Substring preserves its carrier representation`.`Substring carrier conversion round trips through its underlying value` {
+extension `Substring preserves its carrier representation`
+    .`Substring carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Substring round-trips via underlying`() {
@@ -19,7 +21,9 @@ extension `Substring preserves its carrier representation`.`Substring carrier co
     }
 }
 
-extension `Substring preserves its carrier representation`.`Substring carrier conversion preserves text boundaries and Unicode content` {
+extension `Substring preserves its carrier representation`
+    .`Substring carrier conversion preserves text boundaries and Unicode content`
+{
 
     @Test
     func `Substring handles empty slice`() {
@@ -43,7 +47,9 @@ extension `Substring preserves its carrier representation`.`Substring carrier co
     }
 }
 
-extension `Substring preserves its carrier representation`.`Substring participates in generic carrier APIs` {
+extension `Substring preserves its carrier representation`
+    .`Substring participates in generic carrier APIs`
+{
 
     @Test
     func `Substring satisfies some Carrier<Substring>`() {

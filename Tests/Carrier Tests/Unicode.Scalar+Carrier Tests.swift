@@ -4,12 +4,15 @@ import Testing
 @Suite
 struct `Unicode.Scalar preserves its carrier representation` {
     @Suite struct `Unicode.Scalar carrier conversion round trips through its underlying value` {}
-    @Suite struct `Unicode.Scalar carrier conversion preserves text boundaries and Unicode content` {}
+    @Suite struct `Unicode.Scalar carrier conversion preserves text boundaries and Unicode content`
+    {}
     @Suite struct `Unicode.Scalar participates in generic carrier APIs` {}
     @Suite(.serialized) struct `No Unicode.Scalar carrier performance cases are defined` {}
 }
 
-extension `Unicode.Scalar preserves its carrier representation`.`Unicode.Scalar carrier conversion round trips through its underlying value` {
+extension `Unicode.Scalar preserves its carrier representation`
+    .`Unicode.Scalar carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Unicode_Scalar round-trips via underlying`() {
@@ -24,7 +27,9 @@ extension `Unicode.Scalar preserves its carrier representation`.`Unicode.Scalar 
     }
 }
 
-extension `Unicode.Scalar preserves its carrier representation`.`Unicode.Scalar carrier conversion preserves text boundaries and Unicode content` {
+extension `Unicode.Scalar preserves its carrier representation`
+    .`Unicode.Scalar carrier conversion preserves text boundaries and Unicode content`
+{
 
     @Test
     func `Unicode_Scalar handles ASCII zero`() {
@@ -51,7 +56,9 @@ extension `Unicode.Scalar preserves its carrier representation`.`Unicode.Scalar 
     }
 }
 
-extension `Unicode.Scalar preserves its carrier representation`.`Unicode.Scalar participates in generic carrier APIs` {
+extension `Unicode.Scalar preserves its carrier representation`
+    .`Unicode.Scalar participates in generic carrier APIs`
+{
 
     @Test
     func `Unicode_Scalar satisfies some Carrier<Unicode_Scalar>`() {

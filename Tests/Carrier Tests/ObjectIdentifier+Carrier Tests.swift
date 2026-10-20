@@ -11,7 +11,9 @@ struct `ObjectIdentifier preserves its carrier representation` {
 
 private final class Token {}
 
-extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier carrier conversion round trips through its underlying value` {
+extension `ObjectIdentifier preserves its carrier representation`
+    .`ObjectIdentifier carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `ObjectIdentifier round-trips via underlying`() {
@@ -28,7 +30,9 @@ extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentif
     }
 }
 
-extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier carrier values distinguish separate instances` {
+extension `ObjectIdentifier preserves its carrier representation`
+    .`ObjectIdentifier carrier values distinguish separate instances`
+{
 
     @Test
     func `ObjectIdentifier distinguishes distinct instances`() {
@@ -40,7 +44,9 @@ extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentif
     }
 }
 
-extension `ObjectIdentifier preserves its carrier representation`.`ObjectIdentifier participates in generic carrier APIs` {
+extension `ObjectIdentifier preserves its carrier representation`
+    .`ObjectIdentifier participates in generic carrier APIs`
+{
 
     @Test
     func `ObjectIdentifier satisfies some Carrier<ObjectIdentifier>`() {

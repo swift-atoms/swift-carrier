@@ -9,7 +9,9 @@ struct `StaticString preserves its carrier representation` {
     @Suite(.serialized) struct `No StaticString carrier performance cases are defined` {}
 }
 
-extension `StaticString preserves its carrier representation`.`StaticString carrier conversion round trips through its underlying value` {
+extension `StaticString preserves its carrier representation`
+    .`StaticString carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `StaticString round-trips via underlying`() {
@@ -18,7 +20,9 @@ extension `StaticString preserves its carrier representation`.`StaticString carr
     }
 }
 
-extension `StaticString preserves its carrier representation`.`StaticString carrier conversion preserves text boundaries and Unicode content` {
+extension `StaticString preserves its carrier representation`
+    .`StaticString carrier conversion preserves text boundaries and Unicode content`
+{
 
     @Test
     func `StaticString handles empty literal`() {
@@ -39,7 +43,9 @@ extension `StaticString preserves its carrier representation`.`StaticString carr
     }
 }
 
-extension `StaticString preserves its carrier representation`.`StaticString participates in generic carrier APIs` {
+extension `StaticString preserves its carrier representation`
+    .`StaticString participates in generic carrier APIs`
+{
 
     @Test
     func `StaticString satisfies some Carrier<StaticString>`() {

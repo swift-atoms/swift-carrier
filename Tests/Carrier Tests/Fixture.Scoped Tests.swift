@@ -9,7 +9,9 @@ struct `Scoped carriers preserve noncopyable and nonescapable capabilities` {
     @Suite(.serialized) struct `No scoped carrier performance cases are defined` {}
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers admit noncopyable nonescapable underlying values` {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+    .`Scoped carriers admit noncopyable nonescapable underlying values`
+{
 
     @Test
     func `Scoped conforms with noncopyable nonescapable underlying`() {
@@ -19,7 +21,9 @@ extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`
     }
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers preserve zero and negative values` {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+    .`Scoped carriers preserve zero and negative values`
+{
 
     @Test
     func `Scoped handles raw zero`() {
@@ -34,7 +38,9 @@ extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`
     }
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`.`Scoped carriers satisfy generic carrier requirements` {
+extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+    .`Scoped carriers satisfy generic carrier requirements`
+{
 
     @Test
     func `Scoped satisfies generic Carrier contract`() {

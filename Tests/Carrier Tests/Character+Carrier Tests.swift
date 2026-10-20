@@ -9,7 +9,9 @@ struct `Character preserves its carrier representation` {
     @Suite(.serialized) struct `No Character carrier performance cases are defined` {}
 }
 
-extension `Character preserves its carrier representation`.`Character carrier conversion round trips through its underlying value` {
+extension `Character preserves its carrier representation`
+    .`Character carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Character round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Character preserves its carrier representation`.`Character carrier co
     }
 }
 
-extension `Character preserves its carrier representation`.`Character carrier conversion preserves text boundaries and Unicode content` {
+extension `Character preserves its carrier representation`
+    .`Character carrier conversion preserves text boundaries and Unicode content`
+{
 
     @Test
     func `Character handles emoji grapheme cluster`() {
@@ -45,7 +49,9 @@ extension `Character preserves its carrier representation`.`Character carrier co
     }
 }
 
-extension `Character preserves its carrier representation`.`Character participates in generic carrier APIs` {
+extension `Character preserves its carrier representation`
+    .`Character participates in generic carrier APIs`
+{
 
     @Test
     func `Character satisfies some Carrier<Character>`() {

@@ -9,7 +9,9 @@ struct `Never satisfies carrier requirements at the type level` {
     @Suite(.serialized) struct `No Never carrier performance cases are defined` {}
 }
 
-extension `Never satisfies carrier requirements at the type level`.`Never exposes its carrier associated types without constructing values` {
+extension `Never satisfies carrier requirements at the type level`
+    .`Never exposes its carrier associated types without constructing values`
+{
 
     @Test
     func `Never conforms to Carrier at the type level`() {

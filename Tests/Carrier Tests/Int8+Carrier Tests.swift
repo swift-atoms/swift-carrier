@@ -9,7 +9,9 @@ struct `Int8 preserves its carrier representation` {
     @Suite(.serialized) struct `No Int8 carrier performance cases are defined` {}
 }
 
-extension `Int8 preserves its carrier representation`.`Int8 carrier conversion round trips through its underlying value` {
+extension `Int8 preserves its carrier representation`
+    .`Int8 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int8 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int8 preserves its carrier representation`.`Int8 carrier conversion r
     }
 }
 
-extension `Int8 preserves its carrier representation`.`Int8 carrier conversions preserve boundary values` {
+extension `Int8 preserves its carrier representation`
+    .`Int8 carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int8 handles min`() {

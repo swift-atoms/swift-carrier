@@ -9,7 +9,9 @@ struct `UInt preserves its carrier representation` {
     @Suite(.serialized) struct `No UInt carrier performance cases are defined` {}
 }
 
-extension `UInt preserves its carrier representation`.`UInt carrier conversion round trips through its underlying value` {
+extension `UInt preserves its carrier representation`
+    .`UInt carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `UInt round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `UInt preserves its carrier representation`.`UInt carrier conversion r
     }
 }
 
-extension `UInt preserves its carrier representation`.`UInt carrier conversions preserve boundary values` {
+extension `UInt preserves its carrier representation`
+    .`UInt carrier conversions preserve boundary values`
+{
 
     @Test
     func `UInt handles min (zero)`() {

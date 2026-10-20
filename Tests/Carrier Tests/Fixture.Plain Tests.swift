@@ -9,7 +9,9 @@ struct `Plain carriers preserve their stored integer values` {
     @Suite(.serialized) struct `No plain carrier performance cases are defined` {}
 }
 
-extension `Plain carriers preserve their stored integer values`.`Plain carriers store and round trip integers` {
+extension `Plain carriers preserve their stored integer values`
+    .`Plain carriers store and round trip integers`
+{
 
     @Test
     func `Plain stores and reads Int underlying`() {
@@ -25,7 +27,9 @@ extension `Plain carriers preserve their stored integer values`.`Plain carriers 
     }
 }
 
-extension `Plain carriers preserve their stored integer values`.`Plain carriers preserve integer extremes` {
+extension `Plain carriers preserve their stored integer values`
+    .`Plain carriers preserve integer extremes`
+{
 
     @Test
     func `Plain handles Int min`() {
@@ -46,7 +50,9 @@ extension `Plain carriers preserve their stored integer values`.`Plain carriers 
     }
 }
 
-extension `Plain carriers preserve their stored integer values`.`Plain carriers expose their underlying integer and default domain` {
+extension `Plain carriers preserve their stored integer values`
+    .`Plain carriers expose their underlying integer and default domain`
+{
 
     @Test
     func `Plain satisfies some Carrier<Int>`() {

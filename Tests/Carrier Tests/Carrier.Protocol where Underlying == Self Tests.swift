@@ -17,7 +17,9 @@ extension Cardinal {
     typealias Underlying = Self
 }
 
-extension `Self carriers receive default conversion operations`.`Self carrier defaults preserve construction and underlying values` {
+extension `Self carriers receive default conversion operations`
+    .`Self carrier defaults preserve construction and underlying values`
+{
 
     @Test
     func `default extension provides underlying for trivial self-carrier`() {
@@ -40,7 +42,9 @@ extension `Self carriers receive default conversion operations`.`Self carrier de
     }
 }
 
-extension `Self carriers receive default conversion operations`.`Self carriers satisfy generic underlying type constraints` {
+extension `Self carriers receive default conversion operations`
+    .`Self carriers satisfy generic underlying type constraints`
+{
 
     @Test
     func `synthetic trivial conformer reaches some Carrier<U> API`() {

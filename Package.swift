@@ -14,29 +14,31 @@ let package = Package(
     products: [
         .library(name: "Carrier", targets: ["Carrier"]),
 
-        .library(name: "Carrier Foundation Integration", targets: ["Carrier Foundation Integration"]),
+        .library(
+            name: "Carrier Foundation Integration",
+            targets: ["Carrier Foundation Integration"]
+        ),
         .library(name: "Carrier Test Support", targets: ["Carrier Test Support"]),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "Carrier",
-            dependencies: [
-            ],
+            dependencies: [],
             path: "Sources/Carrier"
         ),
-        
+
         .target(
             name: "Carrier Foundation Integration",
             dependencies: [
-                .target(name: "Carrier"),
+                .target(name: "Carrier")
             ],
             path: "Sources/Carrier Foundation Integration"
         ),
         .target(
             name: "Carrier Test Support",
             dependencies: [
-                .target(name: "Carrier"),
+                .target(name: "Carrier")
             ],
             path: "Tests/Support"
         ),
@@ -53,14 +55,15 @@ let package = Package(
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    target.swiftSettings = (target.swiftSettings ?? []) + [
-        .strictMemorySafety(),
-        .enableUpcomingFeature("ExistentialAny"),
-        .enableUpcomingFeature("InternalImportsByDefault"),
-        .enableUpcomingFeature("MemberImportVisibility"),
-        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        .enableUpcomingFeature("InferIsolatedConformances"),
-        .enableExperimentalFeature("Lifetimes"),
-        .treatAllWarnings(as: .error),
-    ]
+    target.swiftSettings =
+        (target.swiftSettings ?? []) + [
+            .strictMemorySafety(),
+            .enableUpcomingFeature("ExistentialAny"),
+            .enableUpcomingFeature("InternalImportsByDefault"),
+            .enableUpcomingFeature("MemberImportVisibility"),
+            .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+            .enableUpcomingFeature("InferIsolatedConformances"),
+            .enableExperimentalFeature("Lifetimes"),
+            .treatAllWarnings(as: .error),
+        ]
 }

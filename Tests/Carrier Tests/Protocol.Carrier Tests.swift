@@ -9,7 +9,9 @@ struct `Carrier constraints expose underlying values and domains` {
     @Suite(.serialized) struct `No carrier protocol performance cases are defined` {}
 }
 
-extension `Carrier constraints expose underlying values and domains`.`Generic carrier dispatch preserves associated types and domains` {
+extension `Carrier constraints expose underlying values and domains`
+    .`Generic carrier dispatch preserves associated types and domains`
+{
 
     @Test
     func `describe reflects Underlying and Domain at type level`() {

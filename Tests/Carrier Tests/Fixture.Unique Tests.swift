@@ -9,7 +9,9 @@ struct `Unique carriers lend noncopyable underlying values` {
     @Suite(.serialized) struct `No unique carrier performance cases are defined` {}
 }
 
-extension `Unique carriers lend noncopyable underlying values`.`Unique carrier reads borrow the underlying value` {
+extension `Unique carriers lend noncopyable underlying values`
+    .`Unique carrier reads borrow the underlying value`
+{
 
     @Test
     func `Unique reads underlying via borrow`() {
@@ -19,7 +21,9 @@ extension `Unique carriers lend noncopyable underlying values`.`Unique carrier r
     }
 }
 
-extension `Unique carriers lend noncopyable underlying values`.`Unique carriers preserve zero and negative values` {
+extension `Unique carriers lend noncopyable underlying values`
+    .`Unique carriers preserve zero and negative values`
+{
 
     @Test
     func `Unique handles raw zero`() {
@@ -34,7 +38,9 @@ extension `Unique carriers lend noncopyable underlying values`.`Unique carriers 
     }
 }
 
-extension `Unique carriers lend noncopyable underlying values`.`Unique carriers satisfy generic carrier requirements` {
+extension `Unique carriers lend noncopyable underlying values`
+    .`Unique carriers satisfy generic carrier requirements`
+{
 
     @Test
     func `Unique satisfies generic Carrier contract`() {

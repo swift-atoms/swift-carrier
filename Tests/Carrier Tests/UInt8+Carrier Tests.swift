@@ -9,7 +9,9 @@ struct `UInt8 preserves its carrier representation` {
     @Suite(.serialized) struct `No UInt8 carrier performance cases are defined` {}
 }
 
-extension `UInt8 preserves its carrier representation`.`UInt8 carrier conversion round trips through its underlying value` {
+extension `UInt8 preserves its carrier representation`
+    .`UInt8 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `UInt8 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `UInt8 preserves its carrier representation`.`UInt8 carrier conversion
     }
 }
 
-extension `UInt8 preserves its carrier representation`.`UInt8 carrier conversions preserve boundary values` {
+extension `UInt8 preserves its carrier representation`
+    .`UInt8 carrier conversions preserve boundary values`
+{
 
     @Test
     func `UInt8 handles min (zero)`() {
@@ -39,7 +43,8 @@ extension `UInt8 preserves its carrier representation`.`UInt8 carrier conversion
     }
 }
 
-extension `UInt8 preserves its carrier representation`.`UInt8 participates in generic carrier APIs` {
+extension `UInt8 preserves its carrier representation`.`UInt8 participates in generic carrier APIs`
+{
 
     @Test
     func `UInt8 satisfies some Carrier<UInt8>`() {

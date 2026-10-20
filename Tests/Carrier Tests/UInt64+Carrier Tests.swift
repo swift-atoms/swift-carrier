@@ -9,7 +9,9 @@ struct `UInt64 preserves its carrier representation` {
     @Suite(.serialized) struct `No UInt64 carrier performance cases are defined` {}
 }
 
-extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversion round trips through its underlying value` {
+extension `UInt64 preserves its carrier representation`
+    .`UInt64 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `UInt64 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversi
     }
 }
 
-extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversions preserve boundary values` {
+extension `UInt64 preserves its carrier representation`
+    .`UInt64 carrier conversions preserve boundary values`
+{
 
     @Test
     func `UInt64 handles min (zero)`() {
@@ -39,7 +43,9 @@ extension `UInt64 preserves its carrier representation`.`UInt64 carrier conversi
     }
 }
 
-extension `UInt64 preserves its carrier representation`.`UInt64 participates in generic carrier APIs` {
+extension `UInt64 preserves its carrier representation`
+    .`UInt64 participates in generic carrier APIs`
+{
 
     @Test
     func `UInt64 satisfies some Carrier<UInt64>`() {

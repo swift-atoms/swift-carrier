@@ -9,7 +9,9 @@ struct `Int32 preserves its carrier representation` {
     @Suite(.serialized) struct `No Int32 carrier performance cases are defined` {}
 }
 
-extension `Int32 preserves its carrier representation`.`Int32 carrier conversion round trips through its underlying value` {
+extension `Int32 preserves its carrier representation`
+    .`Int32 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int32 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int32 preserves its carrier representation`.`Int32 carrier conversion
     }
 }
 
-extension `Int32 preserves its carrier representation`.`Int32 carrier conversions preserve boundary values` {
+extension `Int32 preserves its carrier representation`
+    .`Int32 carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int32 handles min`() {
@@ -45,7 +49,8 @@ extension `Int32 preserves its carrier representation`.`Int32 carrier conversion
     }
 }
 
-extension `Int32 preserves its carrier representation`.`Int32 participates in generic carrier APIs` {
+extension `Int32 preserves its carrier representation`.`Int32 participates in generic carrier APIs`
+{
 
     @Test
     func `Int32 satisfies some Carrier<Int32>`() {

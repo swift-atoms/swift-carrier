@@ -13,7 +13,9 @@ enum Validation: Swift::Error, Sendable {
     case rejected
 }
 
-extension `Carrier initialization preserves validation and capability constraints`.`Validated carriers construct copyable noncopyable and nonescapable values` {
+extension `Carrier initialization preserves validation and capability constraints`
+    .`Validated carriers construct copyable noncopyable and nonescapable values`
+{
 
     @Test
     func `Q1 validation-pass constructs Plain via default throwing init`() throws(Validation) {
@@ -40,7 +42,9 @@ extension `Carrier initialization preserves validation and capability constraint
     }
 }
 
-extension `Carrier initialization preserves validation and capability constraints`.`Carrier validation failures propagate their typed errors` {
+extension `Carrier initialization preserves validation and capability constraints`
+    .`Carrier validation failures propagate their typed errors`
+{
 
     @Test
     func `Q1 validation-fail throws closure's typed error`() {

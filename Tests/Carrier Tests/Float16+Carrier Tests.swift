@@ -11,7 +11,9 @@ import Testing
         @Suite(.serialized) struct `No Float16 carrier performance cases are defined` {}
     }
 
-    extension `Float16 preserves its carrier representation`.`Float16 carrier conversion round trips through its underlying value` {
+    extension `Float16 preserves its carrier representation`
+        .`Float16 carrier conversion round trips through its underlying value`
+    {
 
         @Test
         func `Float16 round-trips via underlying`() {
@@ -26,7 +28,9 @@ import Testing
         }
     }
 
-    extension `Float16 preserves its carrier representation`.`Float16 carrier conversions preserve exceptional floating point values` {
+    extension `Float16 preserves its carrier representation`
+        .`Float16 carrier conversions preserve exceptional floating point values`
+    {
 
         @Test
         func `Float16 handles zero`() {
@@ -47,7 +51,9 @@ import Testing
         }
     }
 
-    extension `Float16 preserves its carrier representation`.`Float16 participates in generic carrier APIs` {
+    extension `Float16 preserves its carrier representation`
+        .`Float16 participates in generic carrier APIs`
+    {
 
         @Test
         func `Float16 satisfies some Carrier<Float16>`() {

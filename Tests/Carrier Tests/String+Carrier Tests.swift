@@ -9,7 +9,9 @@ struct `String preserves its carrier representation` {
     @Suite(.serialized) struct `No String carrier performance cases are defined` {}
 }
 
-extension `String preserves its carrier representation`.`String carrier conversion round trips through its underlying value` {
+extension `String preserves its carrier representation`
+    .`String carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `String round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `String preserves its carrier representation`.`String carrier conversi
     }
 }
 
-extension `String preserves its carrier representation`.`String carrier conversion preserves text boundaries and Unicode content` {
+extension `String preserves its carrier representation`
+    .`String carrier conversion preserves text boundaries and Unicode content`
+{
 
     @Test
     func `String handles empty`() {
@@ -45,7 +49,9 @@ extension `String preserves its carrier representation`.`String carrier conversi
     }
 }
 
-extension `String preserves its carrier representation`.`String participates in generic carrier APIs` {
+extension `String preserves its carrier representation`
+    .`String participates in generic carrier APIs`
+{
 
     @Test
     func `String satisfies some Carrier<String>`() {

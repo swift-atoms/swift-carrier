@@ -9,7 +9,9 @@ struct `Int preserves its carrier representation` {
     @Suite(.serialized) struct `No Int carrier performance cases are defined` {}
 }
 
-extension `Int preserves its carrier representation`.`Int carrier conversion round trips through its underlying value` {
+extension `Int preserves its carrier representation`
+    .`Int carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int preserves its carrier representation`.`Int carrier conversion rou
     }
 }
 
-extension `Int preserves its carrier representation`.`Int carrier conversions preserve boundary values` {
+extension `Int preserves its carrier representation`
+    .`Int carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int handles min`() {

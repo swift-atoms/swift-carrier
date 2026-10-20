@@ -9,7 +9,9 @@ struct `Span preserves its carrier representation` {
     @Suite(.serialized) struct `No Span carrier performance cases are defined` {}
 }
 
-extension `Span preserves its carrier representation`.`Span lends its underlying carrier representation` {
+extension `Span preserves its carrier representation`
+    .`Span lends its underlying carrier representation`
+{
 
     @Test
     func `Span underlying yields self via _read coroutine`() {
@@ -22,7 +24,9 @@ extension `Span preserves its carrier representation`.`Span lends its underlying
     }
 }
 
-extension `Span preserves its carrier representation`.`Span preserves buffers and satisfies carrier constraints` {
+extension `Span preserves its carrier representation`
+    .`Span preserves buffers and satisfies carrier constraints`
+{
 
     @Test
     func `Span<UInt8> conforms at the type level`() {

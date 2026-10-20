@@ -9,7 +9,9 @@ struct `Double preserves its carrier representation` {
     @Suite(.serialized) struct `No Double carrier performance cases are defined` {}
 }
 
-extension `Double preserves its carrier representation`.`Double carrier conversion round trips through its underlying value` {
+extension `Double preserves its carrier representation`
+    .`Double carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Double round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Double preserves its carrier representation`.`Double carrier conversi
     }
 }
 
-extension `Double preserves its carrier representation`.`Double carrier conversions preserve exceptional floating point values` {
+extension `Double preserves its carrier representation`
+    .`Double carrier conversions preserve exceptional floating point values`
+{
 
     @Test
     func `Double handles zero`() {
@@ -57,7 +61,9 @@ extension `Double preserves its carrier representation`.`Double carrier conversi
     }
 }
 
-extension `Double preserves its carrier representation`.`Double participates in generic carrier APIs` {
+extension `Double preserves its carrier representation`
+    .`Double participates in generic carrier APIs`
+{
 
     @Test
     func `Double satisfies some Carrier<Double>`() {

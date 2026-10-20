@@ -9,7 +9,9 @@ struct `Int16 preserves its carrier representation` {
     @Suite(.serialized) struct `No Int16 carrier performance cases are defined` {}
 }
 
-extension `Int16 preserves its carrier representation`.`Int16 carrier conversion round trips through its underlying value` {
+extension `Int16 preserves its carrier representation`
+    .`Int16 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int16 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int16 preserves its carrier representation`.`Int16 carrier conversion
     }
 }
 
-extension `Int16 preserves its carrier representation`.`Int16 carrier conversions preserve boundary values` {
+extension `Int16 preserves its carrier representation`
+    .`Int16 carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int16 handles min`() {
@@ -45,7 +49,8 @@ extension `Int16 preserves its carrier representation`.`Int16 carrier conversion
     }
 }
 
-extension `Int16 preserves its carrier representation`.`Int16 participates in generic carrier APIs` {
+extension `Int16 preserves its carrier representation`.`Int16 participates in generic carrier APIs`
+{
 
     @Test
     func `Int16 satisfies some Carrier<Int16>`() {

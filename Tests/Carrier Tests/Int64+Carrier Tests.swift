@@ -9,7 +9,9 @@ struct `Int64 preserves its carrier representation` {
     @Suite(.serialized) struct `No Int64 carrier performance cases are defined` {}
 }
 
-extension `Int64 preserves its carrier representation`.`Int64 carrier conversion round trips through its underlying value` {
+extension `Int64 preserves its carrier representation`
+    .`Int64 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int64 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int64 preserves its carrier representation`.`Int64 carrier conversion
     }
 }
 
-extension `Int64 preserves its carrier representation`.`Int64 carrier conversions preserve boundary values` {
+extension `Int64 preserves its carrier representation`
+    .`Int64 carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int64 handles min`() {
@@ -45,7 +49,8 @@ extension `Int64 preserves its carrier representation`.`Int64 carrier conversion
     }
 }
 
-extension `Int64 preserves its carrier representation`.`Int64 participates in generic carrier APIs` {
+extension `Int64 preserves its carrier representation`.`Int64 participates in generic carrier APIs`
+{
 
     @Test
     func `Int64 satisfies some Carrier<Int64>`() {

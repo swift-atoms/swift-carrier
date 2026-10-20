@@ -9,7 +9,9 @@ struct `Int128 preserves its carrier representation` {
     @Suite(.serialized) struct `No Int128 carrier performance cases are defined` {}
 }
 
-extension `Int128 preserves its carrier representation`.`Int128 carrier conversion round trips through its underlying value` {
+extension `Int128 preserves its carrier representation`
+    .`Int128 carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Int128 round-trips via underlying`() {
@@ -24,7 +26,9 @@ extension `Int128 preserves its carrier representation`.`Int128 carrier conversi
     }
 }
 
-extension `Int128 preserves its carrier representation`.`Int128 carrier conversions preserve boundary values` {
+extension `Int128 preserves its carrier representation`
+    .`Int128 carrier conversions preserve boundary values`
+{
 
     @Test
     func `Int128 handles min`() {
@@ -45,7 +49,9 @@ extension `Int128 preserves its carrier representation`.`Int128 carrier conversi
     }
 }
 
-extension `Int128 preserves its carrier representation`.`Int128 participates in generic carrier APIs` {
+extension `Int128 preserves its carrier representation`
+    .`Int128 participates in generic carrier APIs`
+{
 
     @Test
     func `Int128 satisfies some Carrier<Int128>`() {

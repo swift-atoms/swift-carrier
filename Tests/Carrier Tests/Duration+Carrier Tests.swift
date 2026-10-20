@@ -9,7 +9,9 @@ struct `Duration preserves its carrier representation` {
     @Suite(.serialized) struct `No Duration carrier performance cases are defined` {}
 }
 
-extension `Duration preserves its carrier representation`.`Duration carrier conversion round trips through its underlying value` {
+extension `Duration preserves its carrier representation`
+    .`Duration carrier conversion round trips through its underlying value`
+{
 
     @Test
     func `Duration round-trips via underlying`() {
@@ -18,7 +20,9 @@ extension `Duration preserves its carrier representation`.`Duration carrier conv
     }
 }
 
-extension `Duration preserves its carrier representation`.`Duration carrier conversion preserves sign precision and large values` {
+extension `Duration preserves its carrier representation`
+    .`Duration carrier conversion preserves sign precision and large values`
+{
 
     @Test
     func `Duration handles zero`() {
@@ -45,7 +49,9 @@ extension `Duration preserves its carrier representation`.`Duration carrier conv
     }
 }
 
-extension `Duration preserves its carrier representation`.`Duration participates in generic carrier APIs` {
+extension `Duration preserves its carrier representation`
+    .`Duration participates in generic carrier APIs`
+{
 
     @Test
     func `Duration satisfies some Carrier<Duration>`() {
