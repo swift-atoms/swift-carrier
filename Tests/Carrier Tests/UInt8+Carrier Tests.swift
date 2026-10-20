@@ -43,8 +43,7 @@ extension `UInt8 preserves its carrier representation`
     }
 }
 
-extension `UInt8 preserves its carrier representation`.`UInt8 participates in generic carrier APIs`
-{
+extension `UInt8 preserves its carrier representation`.`UInt8 participates in generic carrier APIs` {
 
     @Test
     func `UInt8 satisfies some Carrier<UInt8>`() {

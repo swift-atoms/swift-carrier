@@ -55,8 +55,7 @@ extension `Float preserves its carrier representation`
     }
 }
 
-extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs`
-{
+extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs` {
 
     @Test
     func `Float satisfies some Carrier<Float>`() {

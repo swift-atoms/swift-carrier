@@ -49,8 +49,7 @@ extension `Int32 preserves its carrier representation`
     }
 }
 
-extension `Int32 preserves its carrier representation`.`Int32 participates in generic carrier APIs`
-{
+extension `Int32 preserves its carrier representation`.`Int32 participates in generic carrier APIs` {
 
     @Test
     func `Int32 satisfies some Carrier<Int32>`() {

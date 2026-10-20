@@ -49,8 +49,7 @@ extension `Int16 preserves its carrier representation`
     }
 }
 
-extension `Int16 preserves its carrier representation`.`Int16 participates in generic carrier APIs`
-{
+extension `Int16 preserves its carrier representation`.`Int16 participates in generic carrier APIs` {
 
     @Test
     func `Int16 satisfies some Carrier<Int16>`() {

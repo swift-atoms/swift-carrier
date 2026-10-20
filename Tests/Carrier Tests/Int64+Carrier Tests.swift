@@ -49,8 +49,7 @@ extension `Int64 preserves its carrier representation`
     }
 }
 
-extension `Int64 preserves its carrier representation`.`Int64 participates in generic carrier APIs`
-{
+extension `Int64 preserves its carrier representation`.`Int64 participates in generic carrier APIs` {
 
     @Test
     func `Int64 satisfies some Carrier<Int64>`() {
