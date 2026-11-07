@@ -1,11 +1,21 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Carrier initialization preserves validation and capability constraints` {
+enum `Carrier.Protocol where Self ~Copyable & ~Escapable Tests` {}
+
+extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests` {
+    @Suite
+    struct `Carrier initialization preserves validation and capability constraints` {
+    }
+}
+
+extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Carrier initialization preserves validation and capability constraints` {
     @Suite struct `Validated carriers construct copyable noncopyable and nonescapable values` {}
+
     @Suite struct `Carrier validation failures propagate their typed errors` {}
+
     @Suite struct `No validated carrier integration cases are defined` {}
+
     @Suite(.serialized) struct `No validated carrier performance cases are defined` {}
 }
 
@@ -13,7 +23,7 @@ enum Validation: Swift::Error, Sendable {
     case rejected
 }
 
-extension `Carrier initialization preserves validation and capability constraints`
+extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Carrier initialization preserves validation and capability constraints`
     .`Validated carriers construct copyable noncopyable and nonescapable values`
 {
 
@@ -42,7 +52,7 @@ extension `Carrier initialization preserves validation and capability constraint
     }
 }
 
-extension `Carrier initialization preserves validation and capability constraints`
+extension `Carrier.Protocol where Self ~Copyable & ~Escapable Tests`.`Carrier initialization preserves validation and capability constraints`
     .`Carrier validation failures propagate their typed errors`
 {
 

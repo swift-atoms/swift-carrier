@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Substring preserves its carrier representation` {
+enum `Substring+Carrier Tests` {}
+
+extension `Substring+Carrier Tests` {
+    @Suite
+    struct `Substring preserves its carrier representation` {
+    }
+}
+
+extension `Substring+Carrier Tests`.`Substring preserves its carrier representation` {
     @Suite struct `Substring carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Substring carrier conversion preserves text boundaries and Unicode content` {}
+
     @Suite struct `Substring participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Substring carrier performance cases are defined` {}
 }
 
-extension `Substring preserves its carrier representation`
+extension `Substring+Carrier Tests`.`Substring preserves its carrier representation`
     .`Substring carrier conversion round trips through its underlying value`
 {
 
@@ -21,7 +31,7 @@ extension `Substring preserves its carrier representation`
     }
 }
 
-extension `Substring preserves its carrier representation`
+extension `Substring+Carrier Tests`.`Substring preserves its carrier representation`
     .`Substring carrier conversion preserves text boundaries and Unicode content`
 {
 
@@ -47,7 +57,7 @@ extension `Substring preserves its carrier representation`
     }
 }
 
-extension `Substring preserves its carrier representation`
+extension `Substring+Carrier Tests`.`Substring preserves its carrier representation`
     .`Substring participates in generic carrier APIs`
 {
 

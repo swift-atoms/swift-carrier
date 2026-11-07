@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `UInt64 preserves its carrier representation` {
+enum `UInt64+Carrier Tests` {}
+
+extension `UInt64+Carrier Tests` {
+    @Suite
+    struct `UInt64 preserves its carrier representation` {
+    }
+}
+
+extension `UInt64+Carrier Tests`.`UInt64 preserves its carrier representation` {
     @Suite struct `UInt64 carrier conversion round trips through its underlying value` {}
+
     @Suite struct `UInt64 carrier conversions preserve boundary values` {}
+
     @Suite struct `UInt64 participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No UInt64 carrier performance cases are defined` {}
 }
 
-extension `UInt64 preserves its carrier representation`
+extension `UInt64+Carrier Tests`.`UInt64 preserves its carrier representation`
     .`UInt64 carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `UInt64 preserves its carrier representation`
     }
 }
 
-extension `UInt64 preserves its carrier representation`
+extension `UInt64+Carrier Tests`.`UInt64 preserves its carrier representation`
     .`UInt64 carrier conversions preserve boundary values`
 {
 
@@ -43,7 +53,7 @@ extension `UInt64 preserves its carrier representation`
     }
 }
 
-extension `UInt64 preserves its carrier representation`
+extension `UInt64+Carrier Tests`.`UInt64 preserves its carrier representation`
     .`UInt64 participates in generic carrier APIs`
 {
 

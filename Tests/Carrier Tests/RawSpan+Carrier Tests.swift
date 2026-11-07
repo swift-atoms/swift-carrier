@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `RawSpan preserves its carrier representation` {
+enum `RawSpan+Carrier Tests` {}
+
+extension `RawSpan+Carrier Tests` {
+    @Suite
+    struct `RawSpan preserves its carrier representation` {
+    }
+}
+
+extension `RawSpan+Carrier Tests`.`RawSpan preserves its carrier representation` {
     @Suite struct `RawSpan lends its underlying carrier representation` {}
+
     @Suite struct `RawSpan preserves buffers and satisfies carrier constraints` {}
+
     @Suite struct `No RawSpan carrier integration cases are defined` {}
+
     @Suite(.serialized) struct `No RawSpan carrier performance cases are defined` {}
 }
 
-extension `RawSpan preserves its carrier representation`
+extension `RawSpan+Carrier Tests`.`RawSpan preserves its carrier representation`
     .`RawSpan lends its underlying carrier representation`
 {
 
@@ -24,7 +34,7 @@ extension `RawSpan preserves its carrier representation`
     }
 }
 
-extension `RawSpan preserves its carrier representation`
+extension `RawSpan+Carrier Tests`.`RawSpan preserves its carrier representation`
     .`RawSpan preserves buffers and satisfies carrier constraints`
 {
 

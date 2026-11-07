@@ -1,11 +1,21 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Self carriers receive default conversion operations` {
+enum `Carrier.Protocol where Underlying == Self Tests` {}
+
+extension `Carrier.Protocol where Underlying == Self Tests` {
+    @Suite
+    struct `Self carriers receive default conversion operations` {
+    }
+}
+
+extension `Carrier.Protocol where Underlying == Self Tests`.`Self carriers receive default conversion operations` {
     @Suite struct `Self carrier defaults preserve construction and underlying values` {}
+
     @Suite struct `No self carrier boundary cases are defined` {}
+
     @Suite struct `Self carriers satisfy generic underlying type constraints` {}
+
     @Suite(.serialized) struct `No self carrier performance cases are defined` {}
 }
 
@@ -17,7 +27,7 @@ extension Cardinal {
     typealias Underlying = Self
 }
 
-extension `Self carriers receive default conversion operations`
+extension `Carrier.Protocol where Underlying == Self Tests`.`Self carriers receive default conversion operations`
     .`Self carrier defaults preserve construction and underlying values`
 {
 
@@ -42,7 +52,7 @@ extension `Self carriers receive default conversion operations`
     }
 }
 
-extension `Self carriers receive default conversion operations`
+extension `Carrier.Protocol where Underlying == Self Tests`.`Self carriers receive default conversion operations`
     .`Self carriers satisfy generic underlying type constraints`
 {
 

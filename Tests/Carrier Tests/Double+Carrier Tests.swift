@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Double preserves its carrier representation` {
+enum `Double+Carrier Tests` {}
+
+extension `Double+Carrier Tests` {
+    @Suite
+    struct `Double preserves its carrier representation` {
+    }
+}
+
+extension `Double+Carrier Tests`.`Double preserves its carrier representation` {
     @Suite struct `Double carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Double carrier conversions preserve exceptional floating point values` {}
+
     @Suite struct `Double participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Double carrier performance cases are defined` {}
 }
 
-extension `Double preserves its carrier representation`
+extension `Double+Carrier Tests`.`Double preserves its carrier representation`
     .`Double carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `Double preserves its carrier representation`
     }
 }
 
-extension `Double preserves its carrier representation`
+extension `Double+Carrier Tests`.`Double preserves its carrier representation`
     .`Double carrier conversions preserve exceptional floating point values`
 {
 
@@ -61,7 +71,7 @@ extension `Double preserves its carrier representation`
     }
 }
 
-extension `Double preserves its carrier representation`
+extension `Double+Carrier Tests`.`Double preserves its carrier representation`
     .`Double participates in generic carrier APIs`
 {
 

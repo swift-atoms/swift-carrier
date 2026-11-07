@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Plain carriers preserve their stored integer values` {
+enum `Fixture.Plain Tests` {}
+
+extension `Fixture.Plain Tests` {
+    @Suite
+    struct `Plain carriers preserve their stored integer values` {
+    }
+}
+
+extension `Fixture.Plain Tests`.`Plain carriers preserve their stored integer values` {
     @Suite struct `Plain carriers store and round trip integers` {}
+
     @Suite struct `Plain carriers preserve integer extremes` {}
+
     @Suite struct `Plain carriers expose their underlying integer and default domain` {}
+
     @Suite(.serialized) struct `No plain carrier performance cases are defined` {}
 }
 
-extension `Plain carriers preserve their stored integer values`
+extension `Fixture.Plain Tests`.`Plain carriers preserve their stored integer values`
     .`Plain carriers store and round trip integers`
 {
 
@@ -27,7 +37,7 @@ extension `Plain carriers preserve their stored integer values`
     }
 }
 
-extension `Plain carriers preserve their stored integer values`
+extension `Fixture.Plain Tests`.`Plain carriers preserve their stored integer values`
     .`Plain carriers preserve integer extremes`
 {
 
@@ -50,7 +60,7 @@ extension `Plain carriers preserve their stored integer values`
     }
 }
 
-extension `Plain carriers preserve their stored integer values`
+extension `Fixture.Plain Tests`.`Plain carriers preserve their stored integer values`
     .`Plain carriers expose their underlying integer and default domain`
 {
 

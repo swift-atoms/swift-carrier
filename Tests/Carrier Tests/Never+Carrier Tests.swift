@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Never satisfies carrier requirements at the type level` {
+enum `Never+Carrier Tests` {}
+
+extension `Never+Carrier Tests` {
+    @Suite
+    struct `Never satisfies carrier requirements at the type level` {
+    }
+}
+
+extension `Never+Carrier Tests`.`Never satisfies carrier requirements at the type level` {
     @Suite struct `No Never carrier construction cases are defined` {}
+
     @Suite struct `Never exposes its carrier associated types without constructing values` {}
+
     @Suite struct `No Never carrier integration cases are defined` {}
+
     @Suite(.serialized) struct `No Never carrier performance cases are defined` {}
 }
 
-extension `Never satisfies carrier requirements at the type level`
+extension `Never+Carrier Tests`.`Never satisfies carrier requirements at the type level`
     .`Never exposes its carrier associated types without constructing values`
 {
 

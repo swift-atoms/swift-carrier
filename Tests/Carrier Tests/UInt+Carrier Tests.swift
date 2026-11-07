@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `UInt preserves its carrier representation` {
+enum `UInt+Carrier Tests` {}
+
+extension `UInt+Carrier Tests` {
+    @Suite
+    struct `UInt preserves its carrier representation` {
+    }
+}
+
+extension `UInt+Carrier Tests`.`UInt preserves its carrier representation` {
     @Suite struct `UInt carrier conversion round trips through its underlying value` {}
+
     @Suite struct `UInt carrier conversions preserve boundary values` {}
+
     @Suite struct `UInt participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No UInt carrier performance cases are defined` {}
 }
 
-extension `UInt preserves its carrier representation`
+extension `UInt+Carrier Tests`.`UInt preserves its carrier representation`
     .`UInt carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `UInt preserves its carrier representation`
     }
 }
 
-extension `UInt preserves its carrier representation`
+extension `UInt+Carrier Tests`.`UInt preserves its carrier representation`
     .`UInt carrier conversions preserve boundary values`
 {
 
@@ -43,7 +53,7 @@ extension `UInt preserves its carrier representation`
     }
 }
 
-extension `UInt preserves its carrier representation`.`UInt participates in generic carrier APIs` {
+extension `UInt+Carrier Tests`.`UInt preserves its carrier representation`.`UInt participates in generic carrier APIs` {
 
     @Test
     func `UInt satisfies some Carrier<UInt>`() {

@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `MutableSpan preserves its carrier representation` {
+enum `MutableSpan+Carrier Tests` {}
+
+extension `MutableSpan+Carrier Tests` {
+    @Suite
+    struct `MutableSpan preserves its carrier representation` {
+    }
+}
+
+extension `MutableSpan+Carrier Tests`.`MutableSpan preserves its carrier representation` {
     @Suite struct `MutableSpan lends its underlying carrier representation` {}
+
     @Suite struct `MutableSpan preserves buffers and satisfies carrier constraints` {}
+
     @Suite struct `No MutableSpan carrier integration cases are defined` {}
+
     @Suite(.serialized) struct `No MutableSpan carrier performance cases are defined` {}
 }
 
-extension `MutableSpan preserves its carrier representation`
+extension `MutableSpan+Carrier Tests`.`MutableSpan preserves its carrier representation`
     .`MutableSpan lends its underlying carrier representation`
 {
 
@@ -23,7 +33,7 @@ extension `MutableSpan preserves its carrier representation`
     }
 }
 
-extension `MutableSpan preserves its carrier representation`
+extension `MutableSpan+Carrier Tests`.`MutableSpan preserves its carrier representation`
     .`MutableSpan preserves buffers and satisfies carrier constraints`
 {
 

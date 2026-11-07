@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Carrier constraints expose underlying values and domains` {
+enum `Protocol.Carrier Tests` {}
+
+extension `Protocol.Carrier Tests` {
+    @Suite
+    struct `Carrier constraints expose underlying values and domains` {
+    }
+}
+
+extension `Protocol.Carrier Tests`.`Carrier constraints expose underlying values and domains` {
     @Suite struct `No carrier protocol construction cases are defined` {}
+
     @Suite struct `No carrier protocol boundary cases are defined` {}
+
     @Suite struct `Generic carrier dispatch preserves associated types and domains` {}
+
     @Suite(.serialized) struct `No carrier protocol performance cases are defined` {}
 }
 
-extension `Carrier constraints expose underlying values and domains`
+extension `Protocol.Carrier Tests`.`Carrier constraints expose underlying values and domains`
     .`Generic carrier dispatch preserves associated types and domains`
 {
 

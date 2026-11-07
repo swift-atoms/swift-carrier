@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Span preserves its carrier representation` {
+enum `Span+Carrier Tests` {}
+
+extension `Span+Carrier Tests` {
+    @Suite
+    struct `Span preserves its carrier representation` {
+    }
+}
+
+extension `Span+Carrier Tests`.`Span preserves its carrier representation` {
     @Suite struct `Span lends its underlying carrier representation` {}
+
     @Suite struct `Span preserves buffers and satisfies carrier constraints` {}
+
     @Suite struct `Span participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Span carrier performance cases are defined` {}
 }
 
-extension `Span preserves its carrier representation`
+extension `Span+Carrier Tests`.`Span preserves its carrier representation`
     .`Span lends its underlying carrier representation`
 {
 
@@ -24,7 +34,7 @@ extension `Span preserves its carrier representation`
     }
 }
 
-extension `Span preserves its carrier representation`
+extension `Span+Carrier Tests`.`Span preserves its carrier representation`
     .`Span preserves buffers and satisfies carrier constraints`
 {
 
@@ -54,7 +64,7 @@ extension `Span preserves its carrier representation`
     }
 }
 
-extension `Span preserves its carrier representation`.`Span participates in generic carrier APIs` {
+extension `Span+Carrier Tests`.`Span preserves its carrier representation`.`Span participates in generic carrier APIs` {
 
     @Test
     func `Span satisfies generic Carrier<Span<UInt8>> dispatch`() {

@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Duration preserves its carrier representation` {
+enum `Duration+Carrier Tests` {}
+
+extension `Duration+Carrier Tests` {
+    @Suite
+    struct `Duration preserves its carrier representation` {
+    }
+}
+
+extension `Duration+Carrier Tests`.`Duration preserves its carrier representation` {
     @Suite struct `Duration carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Duration carrier conversion preserves sign precision and large values` {}
+
     @Suite struct `Duration participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Duration carrier performance cases are defined` {}
 }
 
-extension `Duration preserves its carrier representation`
+extension `Duration+Carrier Tests`.`Duration preserves its carrier representation`
     .`Duration carrier conversion round trips through its underlying value`
 {
 
@@ -20,7 +30,7 @@ extension `Duration preserves its carrier representation`
     }
 }
 
-extension `Duration preserves its carrier representation`
+extension `Duration+Carrier Tests`.`Duration preserves its carrier representation`
     .`Duration carrier conversion preserves sign precision and large values`
 {
 
@@ -49,7 +59,7 @@ extension `Duration preserves its carrier representation`
     }
 }
 
-extension `Duration preserves its carrier representation`
+extension `Duration+Carrier Tests`.`Duration preserves its carrier representation`
     .`Duration participates in generic carrier APIs`
 {
 

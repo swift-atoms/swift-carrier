@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Int preserves its carrier representation` {
+enum `Int+Carrier Tests` {}
+
+extension `Int+Carrier Tests` {
+    @Suite
+    struct `Int preserves its carrier representation` {
+    }
+}
+
+extension `Int+Carrier Tests`.`Int preserves its carrier representation` {
     @Suite struct `Int carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Int carrier conversions preserve boundary values` {}
+
     @Suite struct `Int participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Int carrier performance cases are defined` {}
 }
 
-extension `Int preserves its carrier representation`
+extension `Int+Carrier Tests`.`Int preserves its carrier representation`
     .`Int carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `Int preserves its carrier representation`
     }
 }
 
-extension `Int preserves its carrier representation`
+extension `Int+Carrier Tests`.`Int preserves its carrier representation`
     .`Int carrier conversions preserve boundary values`
 {
 
@@ -49,7 +59,7 @@ extension `Int preserves its carrier representation`
     }
 }
 
-extension `Int preserves its carrier representation`.`Int participates in generic carrier APIs` {
+extension `Int+Carrier Tests`.`Int preserves its carrier representation`.`Int participates in generic carrier APIs` {
 
     @Test
     func `Int satisfies some Carrier<Int>`() {

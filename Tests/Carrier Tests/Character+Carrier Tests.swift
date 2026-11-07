@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Character preserves its carrier representation` {
+enum `Character+Carrier Tests` {}
+
+extension `Character+Carrier Tests` {
+    @Suite
+    struct `Character preserves its carrier representation` {
+    }
+}
+
+extension `Character+Carrier Tests`.`Character preserves its carrier representation` {
     @Suite struct `Character carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Character carrier conversion preserves text boundaries and Unicode content` {}
+
     @Suite struct `Character participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Character carrier performance cases are defined` {}
 }
 
-extension `Character preserves its carrier representation`
+extension `Character+Carrier Tests`.`Character preserves its carrier representation`
     .`Character carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `Character preserves its carrier representation`
     }
 }
 
-extension `Character preserves its carrier representation`
+extension `Character+Carrier Tests`.`Character preserves its carrier representation`
     .`Character carrier conversion preserves text boundaries and Unicode content`
 {
 
@@ -49,7 +59,7 @@ extension `Character preserves its carrier representation`
     }
 }
 
-extension `Character preserves its carrier representation`
+extension `Character+Carrier Tests`.`Character preserves its carrier representation`
     .`Character participates in generic carrier APIs`
 {
 

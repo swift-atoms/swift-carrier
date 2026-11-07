@@ -1,17 +1,27 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `ObjectIdentifier preserves its carrier representation` {
+enum `ObjectIdentifier+Carrier Tests` {}
+
+extension `ObjectIdentifier+Carrier Tests` {
+    @Suite
+    struct `ObjectIdentifier preserves its carrier representation` {
+    }
+}
+
+extension `ObjectIdentifier+Carrier Tests`.`ObjectIdentifier preserves its carrier representation` {
     @Suite struct `ObjectIdentifier carrier conversion round trips through its underlying value` {}
+
     @Suite struct `ObjectIdentifier carrier values distinguish separate instances` {}
+
     @Suite struct `ObjectIdentifier participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No ObjectIdentifier carrier performance cases are defined` {}
 }
 
 private final class Token {}
 
-extension `ObjectIdentifier preserves its carrier representation`
+extension `ObjectIdentifier+Carrier Tests`.`ObjectIdentifier preserves its carrier representation`
     .`ObjectIdentifier carrier conversion round trips through its underlying value`
 {
 
@@ -30,7 +40,7 @@ extension `ObjectIdentifier preserves its carrier representation`
     }
 }
 
-extension `ObjectIdentifier preserves its carrier representation`
+extension `ObjectIdentifier+Carrier Tests`.`ObjectIdentifier preserves its carrier representation`
     .`ObjectIdentifier carrier values distinguish separate instances`
 {
 
@@ -44,7 +54,7 @@ extension `ObjectIdentifier preserves its carrier representation`
     }
 }
 
-extension `ObjectIdentifier preserves its carrier representation`
+extension `ObjectIdentifier+Carrier Tests`.`ObjectIdentifier preserves its carrier representation`
     .`ObjectIdentifier participates in generic carrier APIs`
 {
 

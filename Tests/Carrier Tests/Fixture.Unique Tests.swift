@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Unique carriers lend noncopyable underlying values` {
+enum `Fixture.Unique Tests` {}
+
+extension `Fixture.Unique Tests` {
+    @Suite
+    struct `Unique carriers lend noncopyable underlying values` {
+    }
+}
+
+extension `Fixture.Unique Tests`.`Unique carriers lend noncopyable underlying values` {
     @Suite struct `Unique carrier reads borrow the underlying value` {}
+
     @Suite struct `Unique carriers preserve zero and negative values` {}
+
     @Suite struct `Unique carriers satisfy generic carrier requirements` {}
+
     @Suite(.serialized) struct `No unique carrier performance cases are defined` {}
 }
 
-extension `Unique carriers lend noncopyable underlying values`
+extension `Fixture.Unique Tests`.`Unique carriers lend noncopyable underlying values`
     .`Unique carrier reads borrow the underlying value`
 {
 
@@ -21,7 +31,7 @@ extension `Unique carriers lend noncopyable underlying values`
     }
 }
 
-extension `Unique carriers lend noncopyable underlying values`
+extension `Fixture.Unique Tests`.`Unique carriers lend noncopyable underlying values`
     .`Unique carriers preserve zero and negative values`
 {
 
@@ -38,7 +48,7 @@ extension `Unique carriers lend noncopyable underlying values`
     }
 }
 
-extension `Unique carriers lend noncopyable underlying values`
+extension `Fixture.Unique Tests`.`Unique carriers lend noncopyable underlying values`
     .`Unique carriers satisfy generic carrier requirements`
 {
 

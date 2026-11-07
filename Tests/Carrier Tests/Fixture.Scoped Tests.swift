@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Scoped carriers preserve noncopyable and nonescapable capabilities` {
+enum `Fixture.Scoped Tests` {}
+
+extension `Fixture.Scoped Tests` {
+    @Suite
+    struct `Scoped carriers preserve noncopyable and nonescapable capabilities` {
+    }
+}
+
+extension `Fixture.Scoped Tests`.`Scoped carriers preserve noncopyable and nonescapable capabilities` {
     @Suite struct `Scoped carriers admit noncopyable nonescapable underlying values` {}
+
     @Suite struct `Scoped carriers preserve zero and negative values` {}
+
     @Suite struct `Scoped carriers satisfy generic carrier requirements` {}
+
     @Suite(.serialized) struct `No scoped carrier performance cases are defined` {}
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+extension `Fixture.Scoped Tests`.`Scoped carriers preserve noncopyable and nonescapable capabilities`
     .`Scoped carriers admit noncopyable nonescapable underlying values`
 {
 
@@ -21,7 +31,7 @@ extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
     }
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+extension `Fixture.Scoped Tests`.`Scoped carriers preserve noncopyable and nonescapable capabilities`
     .`Scoped carriers preserve zero and negative values`
 {
 
@@ -38,7 +48,7 @@ extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
     }
 }
 
-extension `Scoped carriers preserve noncopyable and nonescapable capabilities`
+extension `Fixture.Scoped Tests`.`Scoped carriers preserve noncopyable and nonescapable capabilities`
     .`Scoped carriers satisfy generic carrier requirements`
 {
 

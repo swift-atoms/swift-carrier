@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `StaticString preserves its carrier representation` {
+enum `StaticString+Carrier Tests` {}
+
+extension `StaticString+Carrier Tests` {
+    @Suite
+    struct `StaticString preserves its carrier representation` {
+    }
+}
+
+extension `StaticString+Carrier Tests`.`StaticString preserves its carrier representation` {
     @Suite struct `StaticString carrier conversion round trips through its underlying value` {}
+
     @Suite struct `StaticString carrier conversion preserves text boundaries and Unicode content` {}
+
     @Suite struct `StaticString participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No StaticString carrier performance cases are defined` {}
 }
 
-extension `StaticString preserves its carrier representation`
+extension `StaticString+Carrier Tests`.`StaticString preserves its carrier representation`
     .`StaticString carrier conversion round trips through its underlying value`
 {
 
@@ -20,7 +30,7 @@ extension `StaticString preserves its carrier representation`
     }
 }
 
-extension `StaticString preserves its carrier representation`
+extension `StaticString+Carrier Tests`.`StaticString preserves its carrier representation`
     .`StaticString carrier conversion preserves text boundaries and Unicode content`
 {
 
@@ -43,7 +53,7 @@ extension `StaticString preserves its carrier representation`
     }
 }
 
-extension `StaticString preserves its carrier representation`
+extension `StaticString+Carrier Tests`.`StaticString preserves its carrier representation`
     .`StaticString participates in generic carrier APIs`
 {
 

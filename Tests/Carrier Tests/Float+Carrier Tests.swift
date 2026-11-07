@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Float preserves its carrier representation` {
+enum `Float+Carrier Tests` {}
+
+extension `Float+Carrier Tests` {
+    @Suite
+    struct `Float preserves its carrier representation` {
+    }
+}
+
+extension `Float+Carrier Tests`.`Float preserves its carrier representation` {
     @Suite struct `Float carrier conversion round trips through its underlying value` {}
+
     @Suite struct `Float carrier conversions preserve exceptional floating point values` {}
+
     @Suite struct `Float participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Float carrier performance cases are defined` {}
 }
 
-extension `Float preserves its carrier representation`
+extension `Float+Carrier Tests`.`Float preserves its carrier representation`
     .`Float carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `Float preserves its carrier representation`
     }
 }
 
-extension `Float preserves its carrier representation`
+extension `Float+Carrier Tests`.`Float preserves its carrier representation`
     .`Float carrier conversions preserve exceptional floating point values`
 {
 
@@ -55,7 +65,7 @@ extension `Float preserves its carrier representation`
     }
 }
 
-extension `Float preserves its carrier representation`.`Float participates in generic carrier APIs` {
+extension `Float+Carrier Tests`.`Float preserves its carrier representation`.`Float participates in generic carrier APIs` {
 
     @Test
     func `Float satisfies some Carrier<Float>`() {

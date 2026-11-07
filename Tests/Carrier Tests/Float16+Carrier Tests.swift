@@ -3,15 +3,25 @@ import Testing
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
 
-    @Suite
-    struct `Float16 preserves its carrier representation` {
+enum `Float16+Carrier Tests` {}
+
+extension `Float16+Carrier Tests` {
+        @Suite
+        struct `Float16 preserves its carrier representation` {
+        }
+}
+
+    extension `Float16+Carrier Tests`.`Float16 preserves its carrier representation` {
         @Suite struct `Float16 carrier conversion round trips through its underlying value` {}
+
         @Suite struct `Float16 carrier conversions preserve exceptional floating point values` {}
+
         @Suite struct `Float16 participates in generic carrier APIs` {}
+
         @Suite(.serialized) struct `No Float16 carrier performance cases are defined` {}
     }
 
-    extension `Float16 preserves its carrier representation`
+    extension `Float16+Carrier Tests`.`Float16 preserves its carrier representation`
         .`Float16 carrier conversion round trips through its underlying value`
     {
 
@@ -28,7 +38,7 @@ import Testing
         }
     }
 
-    extension `Float16 preserves its carrier representation`
+    extension `Float16+Carrier Tests`.`Float16 preserves its carrier representation`
         .`Float16 carrier conversions preserve exceptional floating point values`
     {
 
@@ -51,7 +61,7 @@ import Testing
         }
     }
 
-    extension `Float16 preserves its carrier representation`
+    extension `Float16+Carrier Tests`.`Float16 preserves its carrier representation`
         .`Float16 participates in generic carrier APIs`
     {
 

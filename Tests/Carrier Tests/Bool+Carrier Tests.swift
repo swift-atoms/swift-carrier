@@ -1,15 +1,25 @@
 import Carrier_Test_Support
 import Testing
 
-@Suite
-struct `Bool preserves its carrier representation` {
+enum `Bool+Carrier Tests` {}
+
+extension `Bool+Carrier Tests` {
+    @Suite
+    struct `Bool preserves its carrier representation` {
+    }
+}
+
+extension `Bool+Carrier Tests`.`Bool preserves its carrier representation` {
     @Suite struct `Bool carrier conversion round trips through its underlying value` {}
+
     @Suite struct `False Boolean values preserve their carrier representation` {}
+
     @Suite struct `Bool participates in generic carrier APIs` {}
+
     @Suite(.serialized) struct `No Bool carrier performance cases are defined` {}
 }
 
-extension `Bool preserves its carrier representation`
+extension `Bool+Carrier Tests`.`Bool preserves its carrier representation`
     .`Bool carrier conversion round trips through its underlying value`
 {
 
@@ -26,7 +36,7 @@ extension `Bool preserves its carrier representation`
     }
 }
 
-extension `Bool preserves its carrier representation`
+extension `Bool+Carrier Tests`.`Bool preserves its carrier representation`
     .`False Boolean values preserve their carrier representation`
 {
 
@@ -37,7 +47,7 @@ extension `Bool preserves its carrier representation`
     }
 }
 
-extension `Bool preserves its carrier representation`.`Bool participates in generic carrier APIs` {
+extension `Bool+Carrier Tests`.`Bool preserves its carrier representation`.`Bool participates in generic carrier APIs` {
 
     @Test
     func `Bool satisfies some Carrier<Bool>`() {
