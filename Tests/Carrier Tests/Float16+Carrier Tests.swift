@@ -3,13 +3,13 @@ import Testing
 
 #if os(iOS) || os(tvOS) || os(watchOS) || os(visionOS) || ((os(macOS) || targetEnvironment(macCatalyst)) && arch(arm64))
 
-enum `Float16+Carrier Tests` {}
+    enum `Float16+Carrier Tests` {}
 
-extension `Float16+Carrier Tests` {
+    extension `Float16+Carrier Tests` {
         @Suite
         struct `Float16 preserves its carrier representation` {
         }
-}
+    }
 
     extension `Float16+Carrier Tests`.`Float16 preserves its carrier representation` {
         @Suite struct `Float16 carrier conversion round trips through its underlying value` {}
